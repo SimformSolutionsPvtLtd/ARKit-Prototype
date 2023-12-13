@@ -71,6 +71,8 @@ func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode
         return node
     }
 ```
+![Image Detection](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/088a4166-ab5e-44fe-8166-e9bbe18e83ed)
+
 ## Save and load maps
 ARKit 2 comes with revolutionary ARWorldMap that allows persistent and multiuser AR experiences. In simpler words, you can use ARWorldMap to not only render AR experiences and render objects, but it also builds awareness about your user’s physical space and helps your app. This means that you can detect and standardise real world features in your iOS app. 
 
