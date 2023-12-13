@@ -112,7 +112,6 @@ func receivedData(_ data: Data, from peer: MCPeerID) {
 ```
 If you wish to get a more hands on experience with Multi user AR experiences, Apple has a demo project just for that. You can download the demo [here](https://developer.apple.com/documentation/arkit/creating_a_multiuser_ar_experience).
 
-
 ### Object Detection
 The new ARKit gives you the ability to scan 3D objects in the real world, creating a map of the scanned object that can be loaded when the object comes into view in the camera. Similar to the ARWorldMap object, ARKit creates a savable ARReferenceObject that can be saved and loaded during another session.
 
