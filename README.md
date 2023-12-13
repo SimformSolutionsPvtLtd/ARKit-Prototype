@@ -110,6 +110,10 @@ func receivedData(_ data: Data, from peer: MCPeerID) {
         }
 }
 ```
+![AR World Sharing 1 (1)](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/2edce4c1-cc47-4630-b040-66e68cefa1c8)
+![AR World Sharing 2 (1)](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/ba5447dd-3f26-4735-9225-babd3cf89c1d)
+
+
 If you wish to get a more hands on experience with Multi user AR experiences, Apple has a demo project just for that. You can download the demo [here](https://developer.apple.com/documentation/arkit/creating_a_multiuser_ar_experience).
 
 ### Object Detection
@@ -142,6 +146,8 @@ To enable environmental texturing, we simply set the configuration’s
 ```sh
 environmentalTexturing property to .automatic.
 ```
+![Env texturing gif (1)](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/92213377-fd84-49d7-8975-c716fa7b0d78)
+
 Apple has created a project that can be used to scan 3D objects, and can be downloaded [here](https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects?changes=latest_minor)
  
 ### Inspired
