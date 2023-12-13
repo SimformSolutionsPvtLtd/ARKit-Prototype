@@ -71,7 +71,8 @@ func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode
         return node
     }
 ```
-![Image Detection](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/088a4166-ab5e-44fe-8166-e9bbe18e83ed)
+![AR Image Detection (1)](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/6ac17fc5-b36d-4378-8f96-76c0c8e37fea)
+
 
 ## Save and load maps
 ARKit 2 comes with revolutionary ARWorldMap that allows persistent and multiuser AR experiences. In simpler words, you can use ARWorldMap to not only render AR experiences and render objects, but it also builds awareness about your user’s physical space and helps your app. This means that you can detect and standardise real world features in your iOS app. 
@@ -138,6 +139,9 @@ The new ARKit gives you the ability to scan 3D objects in the real world, creati
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? 
  ```
  You can do You custom action in this delegate method.
+
+ ![Detect Object](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/0e318372-489d-4fc4-88bd-4223bfbc860b)
+
  
 ### Environment Texturing
 In previous versions of ARKit, 3D objects placed in the real world didn’t have the ability to gather much information about the world around them. This left objects looking unrealistic and out of place. Now, with environmental texturing, objects can reflect the world around them, giving them a greater sense of realism and place. When the user scans the scene, ARKit records and maps the environment onto a cube map. This cube map is then placed over the 3D object allowing it to reflect back the environment around it. What’s even cooler about this is that Apple is using machine learning to generate parts of the cube map that can’t be recorded by the camera, such as overhead lights or other aspects of the scene around it. This means that even if a user isn’t able to scan the entire scene, the object will still look as if it exists in that space because it can reflect objects that aren’t even directly in the scene.
