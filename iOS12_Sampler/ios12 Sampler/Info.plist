@@ -22,10 +22,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_ar-multi-sample._tcp</string>
+	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>This application will use the camera for Augmented Reality.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Need microphone access for uploading videos</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>This application will use local networking to discover nearby devices.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>You can select photos to attach to reports.</string>
 	<key>UILaunchStoryboardName</key>

@@ -652,7 +652,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y98X8JAPH6;
+				DEVELOPMENT_TEAM = K7XJG666ZW;
 				INFOPLIST_FILE = "ios12 Sampler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -670,7 +670,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y98X8JAPH6;
+				DEVELOPMENT_TEAM = K7XJG666ZW;
 				INFOPLIST_FILE = "ios12 Sampler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

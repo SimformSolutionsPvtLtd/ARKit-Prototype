@@ -220,7 +220,6 @@ class ScanObjectsVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UID
             print("Error: Missing scanned object.")
             return
         }
-        DispatchQueue.global().async {
             do {
                 let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
                 
@@ -253,8 +252,7 @@ class ScanObjectsVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UID
             } catch {
                 print(error)
             }
-        }
-        
+
 //        let documentURL = FileManager.default.temporaryDirectory.appendingPathComponent(name + ".arobject")
 //        
 //        DispatchQueue.global().async {

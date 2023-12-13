@@ -10,95 +10,40 @@ import UIKit
 import SceneKit
 import ARKit
 import MultipeerConnectivity
-import CoreBluetooth
 
 class AVSharingWorldMapVC: UIViewController, ARSCNViewDelegate {
 
+    // MARK: - Outlets
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var lblConnectionStatus: UILabel!
+
+    // MARK: - View Life Cycle
     var multipeerSession: MultipeerSession!
     var mapProvider: MCPeerID?
-    var anchor:ARAnchor?
-    var manager:CBCentralManager!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        multipeerSession = MultipeerSession(receivedDataHandler: receivedData)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         sceneView.addGestureRecognizer(tapGesture)
-        multipeerSession = MultipeerSession(receivedDataHandler: receivedData)
-        manager = CBCentralManager()
-        manager.delegate = self
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidLoad()
         startARSession()
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.isNavigationBarHidden = false
         sceneView.session.pause()
     }
 
-    @IBAction func btnActioBack(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
     }
-    @IBAction func btnActionSendToOther(_ sender: UIButton) {
-        switch manager.state {
-        case .poweredOff:
-            self.OkAlertwithMessage(message: "Please turn on Bluetooth to send ARWorld")
-        case .poweredOn:
-            if self.multipeerSession.connectedPeers.count > 0 {
-                sceneView.session.getCurrentWorldMap { worldMap, error in
-                    guard let map = worldMap
-                        else { print("Error: \(error!.localizedDescription)"); return }
-                    guard let data = try? NSKeyedArchiver.archivedData(withRootObject: map, requiringSecureCoding: true)
-                        else { fatalError("can't encode map") }
-                    self.multipeerSession.sendToAllPeers(data)
-                }
-            } else {
-                self.OkAlertwithMessage(message: "No one is connected with you..")
-            }
-            break
-        case .resetting:
-            break
-        case .unauthorized:
-            break
-        case .unsupported:
-            break
-        case .unknown:
-            break
-        }
-    }
-        
-    @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        
-        // Hit test to find a place for a virtual object.
-        guard let hit = sceneView .hitTest(sender.location(in: sceneView), types: [.existingPlaneUsingGeometry, .estimatedHorizontalPlane]) .first
-            else { return }
-        
-        // Place an anchor for a virtual character. The model appears in renderer(_:didAdd:for:).
-        anchor = ARAnchor(name: "ArrowB", transform: hit.worldTransform)
-        sceneView.session.add(anchor: anchor!)
-        
-        let node = loadObject()
-        node.position = SCNVector3((anchor?.transform.translation)!)
-        sceneView.scene.rootNode.addChildNode(node)
-    }
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-    }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-    }
+
     func startARSession()  {
         guard ARWorldTrackingConfiguration.isSupported else {
             fatalError("""
@@ -115,30 +60,30 @@ class AVSharingWorldMapVC: UIViewController, ARSCNViewDelegate {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         sceneView.session.run(configuration)
-        
+
         // Set a delegate to track the number of plane anchors for providing UI feedback.
         sceneView.session.delegate = self
-        sceneView.delegate = self
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         // Prevent the screen from being dimmed after a while as users will likely
         // have long periods of interaction without touching the screen or buttons.
         UIApplication.shared.isIdleTimerDisabled = true
     }
-    
-    func loadObject() -> SCNNode {
-        // MARK: - AR session management
-        let sceneURL = Bundle.main.url(forResource: "ArrowB", withExtension: "scn", subdirectory: "art.scnassets")!
-        let referenceNode = SCNReferenceNode(url: sceneURL)!
-        referenceNode.load()
-        return referenceNode
-    }
-    
+
     // MARK: - ARSCNViewDelegate
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if let name = anchor.name, name.hasPrefix("ArrowB") {
             node.addChildNode(loadObject())
         }
     }
+
+    // MARK: - AR session management
+    func loadObject() -> SCNNode {
+        let sceneURL = Bundle.main.url(forResource: "ArrowB", withExtension: "scn", subdirectory: "art.scnassets")!
+        let referenceNode = SCNReferenceNode(url: sceneURL)!
+        referenceNode.load()
+        return referenceNode
+    }
+    
     func OkAlertwithMessage(message:String) {
         let alertView = UIAlertController(title: "", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
@@ -147,39 +92,50 @@ class AVSharingWorldMapVC: UIViewController, ARSCNViewDelegate {
         alertView.addAction(action)
         self.present(alertView, animated: true, completion: nil)
     }
-}
-extension AVSharingWorldMapVC : CBCentralManagerDelegate{
-    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        switch central.state {
-        case .poweredOn:
-            break
-        case .poweredOff:
-            print("Bluetooth is Off.")
-            break
-        case .resetting:
-            break
-        case .unauthorized:
-            break
-        case .unsupported:
-            break
-        case .unknown:
-            break
-        default:
-            break
+
+    @IBAction func btnActioBack(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction func btnActionSendToOther(_ sender: UIButton) {
+        sceneView.session.getCurrentWorldMap { worldMap, error in
+            guard let map = worldMap
+            else { print("Error: \(error!.localizedDescription)"); return }
+            guard let data = try? NSKeyedArchiver.archivedData(withRootObject: map, requiringSecureCoding: true)
+            else { fatalError("can't encode map") }
+            self.multipeerSession.sendToAllPeers(data)
         }
     }
+
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+
+        // Hit test to find a place for a virtual object.
+        guard let hit = sceneView
+            .hitTest(sender.location(in: sceneView), types: [.existingPlaneUsingGeometry, .estimatedHorizontalPlane])
+            .first
+            else { return }
+
+        // Place an anchor for a virtual character. The model appears in renderer(_:didAdd:for:).
+        let anchor = ARAnchor(name: "ArrowB", transform: hit.worldTransform)
+        sceneView.session.add(anchor: anchor)
+
+        // Send the anchor info to peers, so they can place the same content.
+        guard let data = try? NSKeyedArchiver.archivedData(withRootObject: anchor, requiringSecureCoding: true)
+            else { fatalError("can't encode anchor") }
+        self.multipeerSession.sendToAllPeers(data)
+    }
 }
+
 extension AVSharingWorldMapVC : ARSessionDelegate {
-    
+
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
         updateSessionInfoLabel(for: session.currentFrame!, trackingState: camera.trackingState)
     }
-    
+
     // MARK: - AR session management
     private func updateSessionInfoLabel(for frame: ARFrame, trackingState: ARCamera.TrackingState) {
         // Update the UI to provide feedback on the state of the AR experience.
         let message: String
-        
         switch trackingState {
         case .normal where frame.anchors.isEmpty && multipeerSession.connectedPeers.isEmpty:
             // No planes detected; provide instructions for this app's AR interactions.
@@ -217,35 +173,34 @@ extension AVSharingWorldMapVC : ARSessionDelegate {
         lblConnectionStatus.text = message
     }
 }
+
 extension AVSharingWorldMapVC {
-    
     /// - Tag: ReceiveData
     func receivedData(_ data: Data, from peer: MCPeerID) {
-        
-        if let unarchived = try? NSKeyedUnarchiver.unarchivedObject(of: ARWorldMap.classForKeyedArchiver()!, from: data), let worldMap = unarchived as? ARWorldMap {
-            showAlert()
-            // Run the session with the received world map.
-            let configuration = ARWorldTrackingConfiguration()
-            configuration.planeDetection = .horizontal
-            configuration.initialWorldMap = worldMap
-            sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
-            
-            // Remember who provided the map for showing UI feedback.
-            mapProvider = peer
-        }
-        else
-            if let unarchived = try? NSKeyedUnarchiver.unarchivedObject(of: ARAnchor.classForKeyedUnarchiver(), from: data),
-                let anchor = unarchived as? ARAnchor {
-                
+        do {
+            if let worldMap = try NSKeyedUnarchiver.unarchivedObject(ofClass: ARWorldMap.self, from: data) {
+                // Run the session with the received world map.
+                let configuration = ARWorldTrackingConfiguration()
+                configuration.planeDetection = .horizontal
+                configuration.initialWorldMap = worldMap
+                sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+
+                // Remember who provided the map for showing UI feedback.
+                mapProvider = peer
+            }
+            else
+            if let anchor = try NSKeyedUnarchiver.unarchivedObject(ofClass: ARAnchor.self, from: data) {
+                // Add anchor to the session, ARSCNView delegate adds visible content.
                 sceneView.session.add(anchor: anchor)
-                let node = loadObject()
-                node.position = SCNVector3.positionFromTransform(anchor.transform)
-                sceneView.scene.rootNode.addChildNode(node)
             }
             else {
                 print("unknown data recieved from \(peer)")
+            }
+        } catch {
+            print("can't decode data recieved from \(peer)")
         }
     }
+
     func showAlert() {
         let alert = UIAlertController(title: "ARworld", message: "Received AR World From other Device", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

@@ -76,7 +76,9 @@ class AVMainVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         prevLayer?.frame = (del?.window?.frame)!
         prevLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         CameraView.layer.addSublayer(prevLayer!)
-        session?.startRunning()
+        DispatchQueue.global().async {
+            self.session?.startRunning()
+        }
     }
 
 }

@@ -135,12 +135,14 @@ class AVChoiceVC: UIViewController,UIImagePickerControllerDelegate, UINavigation
         }
     }
     func OkAlertwithMessage(message:String) {
-        let alertView = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-            
-        })
-        alertView.addAction(action)
-        self.present(alertView, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let alertView = UIAlertController(title: "", message: message, preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
+
+            })
+            alertView.addAction(action)
+            self.present(alertView, animated: true, completion: nil)
+        }
     }
     func createSession() {
         session = AVCaptureSession()

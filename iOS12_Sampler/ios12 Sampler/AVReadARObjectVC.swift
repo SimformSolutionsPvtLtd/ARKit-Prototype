@@ -48,12 +48,14 @@ class AVReadARObjectVC: UIViewController,ARSCNViewDelegate {
     
     // MARK: - ARSCNViewDelegate
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        let alertController = UIAlertController(title: "Found Object", message: "This is your object.", preferredStyle: .alert)
-        let action1 = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
-            print("You've pressed default");
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: "Found Object", message: "This is your object.", preferredStyle: .alert)
+            let action1 = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                print("You've pressed default");
+            }
+            alertController.addAction(action1)
+            self.present(alertController, animated: true, completion: nil)
         }
-        alertController.addAction(action1)
-        self.present(alertController, animated: true, completion: nil)
     }
     
     // Override to create and configure nodes for anchors added to the view's session.
