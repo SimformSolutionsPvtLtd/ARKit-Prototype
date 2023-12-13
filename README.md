@@ -71,7 +71,8 @@ func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode
         return node
     }
 ```
-![AR Image Detection (1)](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/cbc90d71-48e5-4705-a1c3-f5f0c076fc7a)
+![New Image Detecttion](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/91aae733-3ae3-4f4c-96c3-6f9f45aec3aa)
+
 
 ## Save and load maps
 ARKit 2 comes with revolutionary ARWorldMap that allows persistent and multiuser AR experiences. In simpler words, you can use ARWorldMap to not only render AR experiences and render objects, but it also builds awareness about your user’s physical space and helps your app. This means that you can detect and standardise real world features in your iOS app. 
@@ -112,8 +113,9 @@ func receivedData(_ data: Data, from peer: MCPeerID) {
 ```
 If you wish to get a more hands on experience with Multi user AR experiences, Apple has a demo project just for that. You can download the demo [here](https://developer.apple.com/documentation/arkit/creating_a_multiuser_ar_experience).
 
-![AR World Sharing 1 (1)](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/6aebbfee-a18a-4dd5-9940-74004aebbf61)
-![AR World Sharing 2 (1)](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/da252568-f438-4a6a-abad-d749ba945d49)
+![New AR world sharing 1 (1)](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/c5e46c3c-3888-4049-8e9d-26718c93c936)
+![New AR world sharing 2 (1)](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/5f1c9404-16e1-488c-b39d-69a777ff50f4)
+
 
 ### Object Detection
 The new ARKit gives you the ability to scan 3D objects in the real world, creating a map of the scanned object that can be loaded when the object comes into view in the camera. Similar to the ARWorldMap object, ARKit creates a savable ARReferenceObject that can be saved and loaded during another session.
@@ -138,8 +140,7 @@ The new ARKit gives you the ability to scan 3D objects in the real world, creati
  ```
  You can do You custom action in this delegate method.
 
- ![Detect Object](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/89b9d059-9bf5-47ff-85c1-46dc96689065)
-
+ ![New Object detection](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/3553ba08-e0a2-41b7-ab4e-a668a3b72f6d)
  
 ### Environment Texturing
 In previous versions of ARKit, 3D objects placed in the real world didn’t have the ability to gather much information about the world around them. This left objects looking unrealistic and out of place. Now, with environmental texturing, objects can reflect the world around them, giving them a greater sense of realism and place. When the user scans the scene, ARKit records and maps the environment onto a cube map. This cube map is then placed over the 3D object allowing it to reflect back the environment around it. What’s even cooler about this is that Apple is using machine learning to generate parts of the cube map that can’t be recorded by the camera, such as overhead lights or other aspects of the scene around it. This means that even if a user isn’t able to scan the entire scene, the object will still look as if it exists in that space because it can reflect objects that aren’t even directly in the scene.
@@ -148,7 +149,7 @@ To enable environmental texturing, we simply set the configuration’s
 ```sh
 environmentalTexturing property to .automatic.
 ```
-![Env texturing gif (1)](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/245758d7-bd44-49dd-bd44-01ed9a9c8372)
+![New Env Texturing](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/2e8bee92-267c-4a90-8608-76af83bcb886)
 
 Apple has created a project that can be used to scan 3D objects, and can be downloaded [here](https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects?changes=latest_minor)
  
