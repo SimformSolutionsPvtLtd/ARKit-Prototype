@@ -31,13 +31,9 @@ class ScanObjectsVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UID
     @IBOutlet weak var toggleInstructionsButton: RoundedButton!
     
     internal var internalState: State = .startARSession
-    
     internal var scan: Scan?
-    
     private var initialARReferenceObject: ARReferenceObject?
-    
     internal var testRun: TestRun?
-    
     internal var messageExpirationTimer: Timer?
     internal var timeOfLastSessionStatusChange: TimeInterval?
     

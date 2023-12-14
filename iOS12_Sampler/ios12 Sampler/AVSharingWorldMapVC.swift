@@ -11,16 +11,17 @@ import SceneKit
 import ARKit
 import MultipeerConnectivity
 
-class AVSharingWorldMapVC: UIViewController, ARSCNViewDelegate {
+class AVSharingWorldMapVC: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var lblConnectionStatus: UILabel!
 
-    // MARK: - View Life Cycle
+    // MARK: - Variables
     var multipeerSession: MultipeerSession!
     var mapProvider: MCPeerID?
 
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         multipeerSession = MultipeerSession(receivedDataHandler: receivedData)
@@ -69,14 +70,6 @@ class AVSharingWorldMapVC: UIViewController, ARSCNViewDelegate {
         UIApplication.shared.isIdleTimerDisabled = true
     }
 
-    // MARK: - ARSCNViewDelegate
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        if let name = anchor.name, name.hasPrefix("ArrowB") {
-            node.addChildNode(loadObject())
-        }
-    }
-
-    // MARK: - AR session management
     func loadObject() -> SCNNode {
         let sceneURL = Bundle.main.url(forResource: "ArrowB", withExtension: "scn", subdirectory: "art.scnassets")!
         let referenceNode = SCNReferenceNode(url: sceneURL)!
@@ -108,17 +101,14 @@ class AVSharingWorldMapVC: UIViewController, ARSCNViewDelegate {
     }
 
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-
         // Hit test to find a place for a virtual object.
         guard let hit = sceneView
             .hitTest(sender.location(in: sceneView), types: [.existingPlaneUsingGeometry, .estimatedHorizontalPlane])
             .first
             else { return }
-
         // Place an anchor for a virtual character. The model appears in renderer(_:didAdd:for:).
         let anchor = ARAnchor(name: "ArrowB", transform: hit.worldTransform)
         sceneView.session.add(anchor: anchor)
-
         // Send the anchor info to peers, so they can place the same content.
         guard let data = try? NSKeyedArchiver.archivedData(withRootObject: anchor, requiringSecureCoding: true)
             else { fatalError("can't encode anchor") }
@@ -126,13 +116,21 @@ class AVSharingWorldMapVC: UIViewController, ARSCNViewDelegate {
     }
 }
 
-extension AVSharingWorldMapVC : ARSessionDelegate {
+// MARK: - ARSCNViewDelegate
+extension AVSharingWorldMapVC: ARSCNViewDelegate {
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        if let name = anchor.name, name.hasPrefix("ArrowB") {
+            node.addChildNode(loadObject())
+        }
+    }
+}
 
+// MARK: - ARSessionDelegate
+extension AVSharingWorldMapVC : ARSessionDelegate {
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
         updateSessionInfoLabel(for: session.currentFrame!, trackingState: camera.trackingState)
     }
 
-    // MARK: - AR session management
     private func updateSessionInfoLabel(for frame: ARFrame, trackingState: ARCamera.TrackingState) {
         // Update the UI to provide feedback on the state of the AR experience.
         let message: String
@@ -140,35 +138,26 @@ extension AVSharingWorldMapVC : ARSessionDelegate {
         case .normal where frame.anchors.isEmpty && multipeerSession.connectedPeers.isEmpty:
             // No planes detected; provide instructions for this app's AR interactions.
             message = "Move around to map the environment, or wait to join a shared session."
-            
         case .normal where !multipeerSession.connectedPeers.isEmpty && mapProvider == nil:
             let peerNames = multipeerSession.connectedPeers.map({ $0.displayName }).joined(separator: ", ")
             message = "Connected with \(peerNames)."
-            
         case .notAvailable:
             message = "Tracking unavailable."
-            
         case .limited(.excessiveMotion):
             message = "Tracking limited - Move the device more slowly."
-            
         case .limited(.insufficientFeatures):
             message = "Tracking limited - Point the device at an area with visible surface detail, or improve lighting conditions."
-            
         case .limited(.initializing) where mapProvider != nil,
              .limited(.relocalizing) where mapProvider != nil:
             message = "Received map from \(mapProvider!.displayName)."
-            
         case .limited(.relocalizing):
             message = "Resuming session — move to where you were when the session was interrupted."
-            
         case .limited(.initializing):
             message = "Initializing AR session."
-            
         default:
             // No feedback needed when tracking is normal and planes are visible.
             // (Nor when in unreachable limited-tracking states.)
             message = ""
-            
         }
         lblConnectionStatus.text = message
     }
@@ -205,9 +194,9 @@ extension AVSharingWorldMapVC {
         let alert = UIAlertController(title: "ARworld", message: "Received AR World From other Device", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-        
     }
 }
+
 extension SCNVector3 {
     // from Apples demo APP
     static func positionFromTransform(_ transform: matrix_float4x4) -> SCNVector3 {
