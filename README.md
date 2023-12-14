@@ -117,11 +117,44 @@ If you wish to get a more hands on experience with Multi user AR experiences, Ap
 ![New AR world sharing 2 (1)](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/5f1c9404-16e1-488c-b39d-69a777ff50f4)
 
 
-### Object Detection
-The new ARKit gives you the ability to scan 3D objects in the real world, creating a map of the scanned object that can be loaded when the object comes into view in the camera. Similar to the ARWorldMap object, ARKit creates a savable ARReferenceObject that can be saved and loaded during another session.
+### Object Scanning & Detection
+The new ARKit gives you the ability to scan 3D objects in the real world, creating a map of the scanned object that can be loaded when the object comes into view in the camera. 
 
-![alt text](https://thumbs.gfycat.com/DirectPleasingFlatcoatretriever-size_restricted.gif)
+While scanning we can get current status of scanned object from the following delegate method
+* Class : ScanObjectsVC.swift
+```sh
+ @objc func scanningStateChanged(_ notification: Notification)
+ ```
+After a successful scan we can create and share a reference object which will be used to detect an object later on.
+* Class : Scan.swift
+```sh
+ func createReferenceObject(completionHandler creationFinished: @escaping (ARReferenceObject?) -> Void) {
+        guard let boundingBox = scannedObject.boundingBox, let origin = scannedObject.origin else {
+            print("Error: No bounding box or object origin present.")
+            creationFinished(nil)
+            return
+        }
+        // Extract the reference object based on the position & orientation of the bounding box.
+        sceneView.session.createReferenceObject(
+            transform: boundingBox.simdWorldTransform,
+            center: float3(), extent: boundingBox.extent,
+            completionHandler: { object, error in
+                if let referenceObject = object {
+                    // Adjust the object's origin with the user-provided transform.
+                    self.scannedReferenceObject =
+                        referenceObject.applyingTransform(origin.simdTransform)
+                    self.scannedReferenceObject!.name = self.scannedObject.scanName
+                    creationFinished(self.scannedReferenceObject)
+                } else {
+                    print("Error: Failed to create reference object. \(error!.localizedDescription)")
+                    creationFinished(nil)
+                }
+        })
+    }
+ ```
+https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/9c2bc288-183d-409c-b489-27c5576fcdea
 
+Similar to the ARWorldMap object, ARKit creates a savable ARReferenceObject that can be saved and loaded during another session.
 * Class : AVReadARObjectVC.swift
 ```sh
  let configuration = ARWorldTrackingConfiguration()
@@ -134,7 +167,7 @@ The new ARKit gives you the ability to scan 3D objects in the real world, creati
  
  sceneView.session.run(configuration)
  ```
- When Object found this delegate method called.
+ When Object is recognized, this delegate method will be called.
  ```sh
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? 
  ```
