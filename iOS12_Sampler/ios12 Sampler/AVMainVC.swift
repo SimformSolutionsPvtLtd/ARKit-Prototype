@@ -34,8 +34,12 @@ class AVMainVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     @IBAction func btnActionWorldSharing(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AVSharingWorldMapVC") as? AVSharingWorldMapVC
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ARImageDetectorVC") as? ARImageDetectorVC
         self.navigationController?.pushViewController(vc!, animated: true)
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ARSurfaceDetectionVC") as? ARSurfaceDetectionVC
+//        self.navigationController?.pushViewController(vc!, animated: true)
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AVSharingWorldMapVC") as? AVSharingWorldMapVC
+//        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func btnActionScanAndDetectObjects(_ sender: UIButton) {

@@ -1,0 +1,18 @@
+{
+  "Outputs" : {
+    "stylizedImage" : {
+      "MLFeatureShortDescription" : "Stylized image"
+    }
+  },
+  "Inputs" : {
+    "image" : {
+      "MLFeatureShortDescription" : "Input image"
+    },
+    "index" : {
+      "MLFeatureShortDescription" : "Style index array (set index I to 1.0 to enable Ith style)"
+    }
+  },
+  "TrainingInputs" : {
+
+  }
+}

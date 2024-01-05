@@ -1,0 +1,17 @@
+{
+  "MLModelVersionStringKey" : "--",
+  "MLModelDescriptionKey" : "Style transfer (resnet-16) created by Turi Create (version 5.0a2)",
+  "MLModelCreatorDefinedKey" : {
+    "style_feature" : "image",
+    "turicreate_version" : "5.0a2",
+    "training_iterations" : "5000",
+    "content_feature" : "image",
+    "model" : "resnet-16",
+    "max_iterations" : "5000",
+    "version" : "1",
+    "num_styles" : "8",
+    "type" : "StyleTransfer"
+  },
+  "MLModelAuthorKey" : "--",
+  "MLModelLicenseKey" : "MIT License"
+}
