@@ -13,8 +13,9 @@ import ARKit
 class ARImageDetectorVC: UIViewController {
 
     @IBOutlet weak var sceneView: ARSCNView!
-    @IBOutlet weak var messagePanel: UIView!
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet private weak var messagePanel: UIView!
+    @IBOutlet private weak var messageLabel: UILabel!
+    @IBOutlet private weak var filterCollectionVw: UICollectionView!
 
     /// need to create an instance as this class's sceneView Outlet will be accessible
     /// from the RectangleDetector class inorder to track an image
@@ -34,6 +35,9 @@ class ARImageDetectorVC: UIViewController {
         rectangleDetector.rectangleDelegate = self
     }
 
+    /// Filter Data
+    var filterData = getFilterData()
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         ARImageDetectorVC.instance = self
@@ -42,6 +46,7 @@ class ARImageDetectorVC: UIViewController {
         UIApplication.shared.isIdleTimerDisabled = true
 
         searchForNewImageToTrack()
+        showMessage("Look for a rectangular image.", autoHide: false)
     }
 
     private func searchForNewImageToTrack() {
@@ -130,15 +135,14 @@ extension ARImageDetectorVC: RectangleDetectorDelegate {
 
 extension ARImageDetectorVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return getFilterData().count
+        return filterData.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let data = getFilterData()
         guard let cell: FilterCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCell", for: indexPath) as? FilterCell else {
             return UICollectionViewCell()
         }
-        cell.configureUI(filterModel: data[indexPath.item], index: indexPath.item)
+        cell.configureUI(filterModel: filterData[indexPath.item], index: indexPath.item)
         cell.filterCellTapDelegate = self
         return cell
     }
@@ -146,8 +150,11 @@ extension ARImageDetectorVC: UICollectionViewDataSource {
 
 extension ARImageDetectorVC: FilterCellTapDelegate {
     func filterCellTapped(index: Int) {
+        filterData.map { $0.isSelected = false }
+        filterData[index].isSelected = true
+        filterCollectionVw.reloadData()
         guard let alterImage = alteredImage else { return }
-        alterImage.selectPreferredStyle(index: index)
+        alterImage.selectPreferredStyle(index: index, filterData: filterData[index])
     }
 }
 

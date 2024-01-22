@@ -68,6 +68,8 @@ class AlteredImage {
     /// The index of the current image's style.
     private var styleIndex = 0
 
+    private var selectedStyle: SelectedFilterStyle = .randomStyle
+
     /// A delegate to tell when image tracking fails.
     weak var delegate: AlteredImageDelegate?
 
@@ -161,9 +163,11 @@ class AlteredImage {
         print("StyleIndex new :- ", styleIndex)
     }
 
-    func selectPreferredStyle(index: Int) {
+    func selectPreferredStyle(index: Int, filterData: FilterModel) {
+        selectedStyle = filterData.selectedFilterStyle
         guard fadeBetweenImages, anchor != nil else { return }
-        styleIndexArray.setOnlyThisIndexToOne(index: index)
+        // as we have added a new "random" style in filter array so need to decrease more
+        styleIndex = index - 1
         createAlteredImage()
     }
 
@@ -215,7 +219,7 @@ class AlteredImage {
 
 extension AlteredImage: VisualizationNodeDelegate {
     func animationDidFinish() {
-        guard fadeBetweenImages, anchor != nil else { return }
+        guard fadeBetweenImages, anchor != nil, selectedStyle == .randomStyle else { return }
         selectNextStyle()
         createAlteredImage()
     }

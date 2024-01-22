@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "IMG_0060.HEIC",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "unit" : "inches",
+    "width" : 42
+  }
+}

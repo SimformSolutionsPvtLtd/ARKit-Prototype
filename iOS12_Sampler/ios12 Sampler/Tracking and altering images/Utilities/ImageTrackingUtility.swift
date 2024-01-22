@@ -11,9 +11,23 @@ import CoreImage
 import CoreML
 import SceneKit
 
-struct FilterModel {
+class FilterModel {
     var filterDummyImage: UIImage
     var filterName: String
+    var isSelected: Bool
+    var selectedFilterStyle: SelectedFilterStyle
+
+    init(filterDummyImage: UIImage, filterName: String, isSelected: Bool, selectedFilterStyle: SelectedFilterStyle = .otherStyle) {
+        self.filterDummyImage = filterDummyImage
+        self.filterName = filterName
+        self.isSelected = isSelected
+        self.selectedFilterStyle = selectedFilterStyle
+    }
+}
+
+enum SelectedFilterStyle {
+    case randomStyle
+    case otherStyle
 }
 
 extension CIImage {
@@ -77,12 +91,13 @@ func createPlaneNode(size: CGSize, rotation: Float, content: Any?) -> SCNNode {
 }
 
 func getFilterData() -> [FilterModel] {
-    return [FilterModel(filterDummyImage: UIImage(named: "style1")!, filterName: "style1"),
-            FilterModel(filterDummyImage: UIImage(named: "style2")!, filterName: "style2"),
-            FilterModel(filterDummyImage: UIImage(named: "style3")!, filterName: "style3"),
-            FilterModel(filterDummyImage: UIImage(named: "style4")!, filterName: "style4"),
-            FilterModel(filterDummyImage: UIImage(named: "style5")!, filterName: "style5"),
-            FilterModel(filterDummyImage: UIImage(named: "style6")!, filterName: "style6"),
-            FilterModel(filterDummyImage: UIImage(named: "style7")!, filterName: "style7"),
-            FilterModel(filterDummyImage: UIImage(named: "style8")!, filterName: "style8"),]
+    return [FilterModel(filterDummyImage: UIImage(named: "random")!, filterName: "Random", isSelected: true, selectedFilterStyle: .randomStyle),
+            FilterModel(filterDummyImage: UIImage(named: "style1")!, filterName: "Style1", isSelected: false),
+            FilterModel(filterDummyImage: UIImage(named: "style2")!, filterName: "Style2", isSelected: false),
+            FilterModel(filterDummyImage: UIImage(named: "style3")!, filterName: "Style3", isSelected: false),
+            FilterModel(filterDummyImage: UIImage(named: "style4")!, filterName: "Style4", isSelected: false),
+            FilterModel(filterDummyImage: UIImage(named: "style5")!, filterName: "Style5", isSelected: false),
+            FilterModel(filterDummyImage: UIImage(named: "style6")!, filterName: "Style6", isSelected: false),
+            FilterModel(filterDummyImage: UIImage(named: "style7")!, filterName: "Style7", isSelected: false),
+            FilterModel(filterDummyImage: UIImage(named: "style8")!, filterName: "Style8", isSelected: false)]
 }

@@ -15,7 +15,9 @@ protocol FilterCellTapDelegate: AnyObject {
 class FilterCell: UICollectionViewCell {
     @IBOutlet weak var imgFilter: UIImageView!
     @IBOutlet weak var lblFilterName: UILabel!
-
+    @IBOutlet weak var dimVw: UIView!
+    @IBOutlet weak var imgTick: UIImageView!
+    
     weak var filterCellTapDelegate: FilterCellTapDelegate?
     var tappedIndex: Int = 0
 
@@ -25,9 +27,11 @@ class FilterCell: UICollectionViewCell {
         contentView.addGestureRecognizer(tapGesture)
         imgFilter.image = filterModel.filterDummyImage
         lblFilterName.text = filterModel.filterName
+        dimVw.isHidden = !filterModel.isSelected
     }
 
     @objc func onFilterCellTap() {
+        dimVw.isHidden = false
         filterCellTapDelegate?.filterCellTapped(index: tappedIndex)
     }
 }
