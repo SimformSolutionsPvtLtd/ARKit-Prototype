@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E04C9072B4EE2F3000B4936 /* ARImageLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04C9062B4EE2F3000B4936 /* ARImageLocator.swift */; };
 		2E04C9092B503318000B4936 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04C9082B503318000B4936 /* StatusViewController.swift */; };
-		2E04C90B2B503A6D000B4936 /* ARImageLocator+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04C90A2B503A6D000B4936 /* ARImageLocator+ARSessionDelegate.swift */; };
 		2E15A5982B32F720001EA792 /* RectangleDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E15A5972B32F720001EA792 /* RectangleDetector.swift */; };
 		2E15A59A2B32FE85001EA792 /* ARImageDetectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E15A5992B32FE85001EA792 /* ARImageDetectorVC.swift */; };
+		2E70214B2B8EFC4000089680 /* ARPostureDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70214A2B8EFC4000089680 /* ARPostureDetection.swift */; };
+		2E70214F2B90A0D900089680 /* BaseCameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70214E2B90A0D900089680 /* BaseCameraVC.swift */; };
+		2E7021512B90A42700089680 /* AVDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7021502B90A42700089680 /* AVDetailsVC.swift */; };
+		2E7021542B95ACA100089680 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7021532B95ACA100089680 /* Int+Extension.swift */; };
+		2E7021562B95ACD600089680 /* SCNVector3+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7021552B95ACD600089680 /* SCNVector3+Extension.swift */; };
+		2E7021582B95ACF900089680 /* Simd3+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7021572B95ACF900089680 /* Simd3+Extension.swift */; };
+		2E70215A2B95B4B600089680 /* MeshResource+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7021592B95B4B600089680 /* MeshResource+Extension.swift */; };
+		2E70215C2B95B65B00089680 /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70215B2B95B65B00089680 /* Float+Extension.swift */; };
 		2E7503282B30640100DF78E1 /* ARSurfaceDetectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7503272B30640100DF78E1 /* ARSurfaceDetectionVC.swift */; };
 		2E75032B2B3079FB00DF78E1 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E75032A2B3079FB00DF78E1 /* Plane.swift */; };
 		2E75032D2B30913E00DF78E1 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E75032C2B30913E00DF78E1 /* Utility.swift */; };
 		2E89AB4A2B46DBD8005EB695 /* ImageTrackingUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E89AB492B46DBD8005EB695 /* ImageTrackingUtility.swift */; };
 		2E89AB4C2B47E11C005EB695 /* VisuallizationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E89AB4B2B47E11C005EB695 /* VisuallizationNode.swift */; };
 		2E89AB4F2B481EAA005EB695 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E89AB4E2B481EAA005EB695 /* FilterCell.swift */; };
+		2E90B3ED2B87636800D3DB90 /* biped_robot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2E90B3EC2B87636800D3DB90 /* biped_robot.usdz */; };
 		2E9300F62B4683DC002BF5D6 /* AlteredImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9300F52B4683DC002BF5D6 /* AlteredImage.swift */; };
 		2E9300F92B469633002BF5D6 /* StyleTransferModel.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 2E9300F82B469633002BF5D6 /* StyleTransferModel.mlpackage */; };
+		2E962C8F2B69017200D0903D /* robot_walk_idle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2E962C8E2B69017200D0903D /* robot_walk_idle.usdz */; };
 		4904E7EB20D77386002F5210 /* ViewController+SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904E7E620D77386002F5210 /* ViewController+SessionInfo.swift */; };
 		4904E7EC20D77386002F5210 /* TestRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904E7E720D77386002F5210 /* TestRun.swift */; };
 		4904E7ED20D77386002F5210 /* ViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904E7E820D77386002F5210 /* ViewController+NavigationBar.swift */; };
@@ -86,19 +94,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E04C9062B4EE2F3000B4936 /* ARImageLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARImageLocator.swift; sourceTree = "<group>"; };
 		2E04C9082B503318000B4936 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
-		2E04C90A2B503A6D000B4936 /* ARImageLocator+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARImageLocator+ARSessionDelegate.swift"; sourceTree = "<group>"; };
 		2E15A5972B32F720001EA792 /* RectangleDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleDetector.swift; sourceTree = "<group>"; };
 		2E15A5992B32FE85001EA792 /* ARImageDetectorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARImageDetectorVC.swift; sourceTree = "<group>"; };
+		2E70214A2B8EFC4000089680 /* ARPostureDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPostureDetection.swift; sourceTree = "<group>"; };
+		2E70214E2B90A0D900089680 /* BaseCameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCameraVC.swift; sourceTree = "<group>"; };
+		2E7021502B90A42700089680 /* AVDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVDetailsVC.swift; sourceTree = "<group>"; };
+		2E7021532B95ACA100089680 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		2E7021552B95ACD600089680 /* SCNVector3+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extension.swift"; sourceTree = "<group>"; };
+		2E7021572B95ACF900089680 /* Simd3+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Simd3+Extension.swift"; sourceTree = "<group>"; };
+		2E7021592B95B4B600089680 /* MeshResource+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeshResource+Extension.swift"; sourceTree = "<group>"; };
+		2E70215B2B95B65B00089680 /* Float+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extension.swift"; sourceTree = "<group>"; };
 		2E7503272B30640100DF78E1 /* ARSurfaceDetectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSurfaceDetectionVC.swift; sourceTree = "<group>"; };
 		2E75032A2B3079FB00DF78E1 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		2E75032C2B30913E00DF78E1 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		2E89AB492B46DBD8005EB695 /* ImageTrackingUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTrackingUtility.swift; sourceTree = "<group>"; };
 		2E89AB4B2B47E11C005EB695 /* VisuallizationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisuallizationNode.swift; sourceTree = "<group>"; };
 		2E89AB4E2B481EAA005EB695 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		2E90B3EC2B87636800D3DB90 /* biped_robot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = biped_robot.usdz; sourceTree = "<group>"; };
 		2E9300F52B4683DC002BF5D6 /* AlteredImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlteredImage.swift; sourceTree = "<group>"; };
 		2E9300F82B469633002BF5D6 /* StyleTransferModel.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = StyleTransferModel.mlpackage; sourceTree = "<group>"; };
+		2E962C8E2B69017200D0903D /* robot_walk_idle.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = robot_walk_idle.usdz; sourceTree = "<group>"; };
 		4904E7E620D77386002F5210 /* ViewController+SessionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SessionInfo.swift"; sourceTree = "<group>"; };
 		4904E7E720D77386002F5210 /* TestRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRun.swift; sourceTree = "<group>"; };
 		4904E7E820D77386002F5210 /* ViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NavigationBar.swift"; sourceTree = "<group>"; };
@@ -181,9 +197,7 @@
 		2E04C9032B4EE267000B4936 /* Detecting Images in AR */ = {
 			isa = PBXGroup;
 			children = (
-				2E04C9062B4EE2F3000B4936 /* ARImageLocator.swift */,
 				2E04C9082B503318000B4936 /* StatusViewController.swift */,
-				2E04C90A2B503A6D000B4936 /* ARImageLocator+ARSessionDelegate.swift */,
 			);
 			path = "Detecting Images in AR";
 			sourceTree = "<group>";
@@ -197,6 +211,26 @@
 				2E89AB4B2B47E11C005EB695 /* VisuallizationNode.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2E7021492B8EFBD500089680 /* Body Detection with AR */ = {
+			isa = PBXGroup;
+			children = (
+				2E70214A2B8EFC4000089680 /* ARPostureDetection.swift */,
+			);
+			path = "Body Detection with AR";
+			sourceTree = "<group>";
+		};
+		2E7021522B95AC7900089680 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2E7021532B95ACA100089680 /* Int+Extension.swift */,
+				2E7021552B95ACD600089680 /* SCNVector3+Extension.swift */,
+				2E7021572B95ACF900089680 /* Simd3+Extension.swift */,
+				2E7021592B95B4B600089680 /* MeshResource+Extension.swift */,
+				2E70215B2B95B65B00089680 /* Float+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		2E7503222B30227F00DF78E1 /* Surface Detection */ = {
@@ -222,8 +256,8 @@
 			children = (
 				2E89AB4D2B481E88005EB695 /* Cell */,
 				2E9300F72B46961D002BF5D6 /* Model */,
-				2E15A5962B32F6FC001EA792 /* Utilities */,
 				2E15A5992B32FE85001EA792 /* ARImageDetectorVC.swift */,
+				2E15A5962B32F6FC001EA792 /* Utilities */,
 			);
 			path = "Tracking and altering images";
 			sourceTree = "<group>";
@@ -242,6 +276,15 @@
 				2E9300F82B469633002BF5D6 /* StyleTransferModel.mlpackage */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2E962C6C2B67A10400D0903D /* USDZ */ = {
+			isa = PBXGroup;
+			children = (
+				2E962C8E2B69017200D0903D /* robot_walk_idle.usdz */,
+				2E90B3EC2B87636800D3DB90 /* biped_robot.usdz */,
+			);
+			path = USDZ;
 			sourceTree = "<group>";
 		};
 		4904E7F520D7767D002F5210 /* Utility Extensions */ = {
@@ -332,20 +375,25 @@
 		4969EA8B20D109FC00F8AE9E /* ios12 Sampler */ = {
 			isa = PBXGroup;
 			children = (
+				2E962C6C2B67A10400D0903D /* USDZ */,
 				4969EA8C20D109FC00F8AE9E /* AppDelegate.swift */,
+				2E70214E2B90A0D900089680 /* BaseCameraVC.swift */,
 				49C5720F20D269E300602C7B /* AVMainVC.swift */,
+				2E7021502B90A42700089680 /* AVDetailsVC.swift */,
 				4969EA9020D109FC00F8AE9E /* AVSharingWorldMapVC.swift */,
 				4968C0E420D14B3200D384F0 /* AVChoiceVC.swift */,
 				4968C0E220D14B1B00D384F0 /* AVScannedObjectListVC.swift */,
 				4968C0E020D12FE500D384F0 /* AVReadARObjectVC.swift */,
 				4931C78C20D3988E002F907B /* AVTextureEnvironment.swift */,
 				8127E0E220D7E5B500D8CD7F /* AVImageDetaction.swift */,
+				2E7021492B8EFBD500089680 /* Body Detection with AR */,
 				2E04C9032B4EE267000B4936 /* Detecting Images in AR */,
 				2E75034B2B31E00400DF78E1 /* Tracking and altering images */,
 				2E7503222B30227F00DF78E1 /* Surface Detection */,
 				4968C0E720D1569C00D384F0 /* ScanningObjectHelperController */,
 				4968C0E620D1561C00D384F0 /* MultiPeerHelperClass */,
 				4969EAC220D129A400F8AE9E /* Scanning Objects Helper Classes */,
+				2E7021522B95AC7900089680 /* Extensions */,
 				8127E0E420D7E5F000D8CD7F /* Helper */,
 				4969EA9A20D109FD00F8AE9E /* Info.plist */,
 				4969EA9220D109FC00F8AE9E /* Main.storyboard */,
@@ -510,6 +558,8 @@
 				4969EA8F20D109FC00F8AE9E /* art.scnassets in Resources */,
 				4991D8F520D907B500BF6564 /* Loky.gif in Resources */,
 				4969EA9920D109FD00F8AE9E /* LaunchScreen.storyboard in Resources */,
+				2E962C8F2B69017200D0903D /* robot_walk_idle.usdz in Resources */,
+				2E90B3ED2B87636800D3DB90 /* biped_robot.usdz in Resources */,
 				4969EA9620D109FD00F8AE9E /* Assets.xcassets in Resources */,
 				4969EA9420D109FC00F8AE9E /* Main.storyboard in Resources */,
 			);
@@ -536,17 +586,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E70215A2B95B4B600089680 /* MeshResource+Extension.swift in Sources */,
 				4931C78D20D3988F002F907B /* AVTextureEnvironment.swift in Sources */,
 				2E89AB4F2B481EAA005EB695 /* FilterCell.swift in Sources */,
 				4968C0E120D12FE500D384F0 /* AVReadARObjectVC.swift in Sources */,
 				4968C0DA20D12AA700D384F0 /* ThresholdPinchGestureRecognizer.swift in Sources */,
 				4968C0DF20D12BF500D384F0 /* ViewController+ApplicationState.swift in Sources */,
+				2E7021582B95ACF900089680 /* Simd3+Extension.swift in Sources */,
+				2E7021542B95ACA100089680 /* Int+Extension.swift in Sources */,
 				49C5721020D269E300602C7B /* AVMainVC.swift in Sources */,
-				2E04C90B2B503A6D000B4936 /* ARImageLocator+ARSessionDelegate.swift in Sources */,
 				2E9300F62B4683DC002BF5D6 /* AlteredImage.swift in Sources */,
 				4904E81020D776B3002F5210 /* DetectedBoundingBox.swift in Sources */,
-				2E04C9072B4EE2F3000B4936 /* ARImageLocator.swift in Sources */,
 				4904E80E20D776B3002F5210 /* ObjectOriginAxis.swift in Sources */,
+				2E70214B2B8EFC4000089680 /* ARPostureDetection.swift in Sources */,
 				4904E7EB20D77386002F5210 /* ViewController+SessionInfo.swift in Sources */,
 				4968C0CB20D12AA700D384F0 /* FlashlightButton.swift in Sources */,
 				2E15A5982B32F720001EA792 /* RectangleDetector.swift in Sources */,
@@ -557,6 +609,7 @@
 				4904E7F920D7767E002F5210 /* ARCameraTrackingState.swift in Sources */,
 				4969EABD20D10AAC00F8AE9E /* MultipeerSession.swift in Sources */,
 				2E7503282B30640100DF78E1 /* ARSurfaceDetectionVC.swift in Sources */,
+				2E7021562B95ACD600089680 /* SCNVector3+Extension.swift in Sources */,
 				4968C0E520D14B3200D384F0 /* AVChoiceVC.swift in Sources */,
 				4969EA9120D109FC00F8AE9E /* AVSharingWorldMapVC.swift in Sources */,
 				4904E80F20D776B3002F5210 /* PointCloud+CreateVisualization.swift in Sources */,
@@ -571,7 +624,9 @@
 				4904E80D20D776B3002F5210 /* DetectedPointCloud.swift in Sources */,
 				8127E0E620D7E60100D8CD7F /* iOSDevCenters+GIF.swift in Sources */,
 				4904E7F820D7767E002F5210 /* Utilities.swift in Sources */,
+				2E7021512B90A42700089680 /* AVDetailsVC.swift in Sources */,
 				2E04C9092B503318000B4936 /* StatusViewController.swift in Sources */,
+				2E70214F2B90A0D900089680 /* BaseCameraVC.swift in Sources */,
 				4904E80820D776B3002F5210 /* ScannedObject.swift in Sources */,
 				4968C0E320D14B1B00D384F0 /* AVScannedObjectListVC.swift in Sources */,
 				4904E7EE20D77386002F5210 /* Scan.swift in Sources */,
@@ -581,6 +636,7 @@
 				4904E80A20D776B3002F5210 /* BoundingBox.swift in Sources */,
 				8127E0E320D7E5B500D8CD7F /* AVImageDetaction.swift in Sources */,
 				4904E80920D776B3002F5210 /* Wireframe.swift in Sources */,
+				2E70215C2B95B65B00089680 /* Float+Extension.swift in Sources */,
 				4968C0CA20D12AA700D384F0 /* MessageLabel.swift in Sources */,
 				4968C0DB20D12AA700D384F0 /* ThresholdPanGestureRecognizer.swift in Sources */,
 				4904E80C20D776B3002F5210 /* DetectedObject.swift in Sources */,
@@ -762,6 +818,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K7XJG666ZW;
 				INFOPLIST_FILE = "ios12 Sampler/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -780,6 +837,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K7XJG666ZW;
 				INFOPLIST_FILE = "ios12 Sampler/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
