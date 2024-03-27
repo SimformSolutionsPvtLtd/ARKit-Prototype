@@ -52,5 +52,37 @@ extension SIMD3<Float> {
     func dot(_ vec: SIMD3<Float>) -> Float {
         return (self.x * vec.x) + (self.y * vec.y) + (self.z * vec.z)
     }
+
+    static func angleForArms(v1: SIMD3<Float>, v2: SIMD3<Float>) -> Float{
+        let vectorFromShoulderToElbow = (v2 - v1)
+        // We can perform further calculations to get the angle from this vector
+        // For example, we can also use atan2 or acos to get the angle in radians or degrees
+        let angleInRadians = atan2(vectorFromShoulderToElbow.x, vectorFromShoulderToElbow.y)
+        let angleInDegrees = abs(angleInRadians.toDegree)
+        print("NEw angle :- ",angleInDegrees)
+        return angleInDegrees
+    }
+
+    static func getAngleBetween(fromAngle: SIMD3<Float>, toAngle: SIMD3<Float>, forAngle: SIMD3<Float>) -> Float {
+        let vector_a = (fromAngle - forAngle)
+        let vector_b = (toAngle - forAngle)
+        let degres = SIMD3<Float>.angle(vector1: vector_a, vector2: vector_b)
+        return degres
+    }
+
+    /// Calculates the **angles** between two vectors.
+    static func angle(vector1: SIMD3<Float>, vector2: SIMD3<Float>) -> Float{
+        /// In order to find the angle between two vectors we can use the formula of dot product
+        ///
+        /// Step 1:- Now we need to find the magniotudes of both the vecitors
+        let mag_vector1 = powf(vector1.x, 2) + powf(vector1.y, 2) + powf(vector1.z, 2) // a^2 + b^2 + c^2 (helpful to calculate magnitude)
+        let mag_vector2 = powf(vector2.x, 2) + powf(vector2.y, 2) + powf(vector2.z, 2)  // a^2 + b^2 + c^2 (helpful to calculate magnitude)
+        let magnitudeForVectors = sqrtf(mag_vector1) * sqrtf(mag_vector2) // Magnitude calculations
+        /// Step 2:-  Need to find dot product on basis of two vectors
+        let dot_product = (vector1.x * vector2.x) + (vector1.y * vector2.y) + (vector1.z * vector2.z) // Dot product
+        /// Step 3:- Calculating the cosine rule for dot and magnitude
+        return acosf(dot_product / magnitudeForVectors).toDegree
+    }
+
 }
 

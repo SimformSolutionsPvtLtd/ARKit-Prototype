@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k7f-92-VpS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k7f-92-VpS">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -1401,7 +1401,6 @@ Image Filter</string>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WI-Yy-R8a">
                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="140"/>
                                                                 <connections>
-                                                                    <action selector="btnActionWorldSharing:" destination="vfx-xJ-K1L" eventType="touchUpInside" id="MuM-8A-PFl"/>
                                                                     <action selector="btnLiveImageFilterClicked:" destination="M8d-dN-Tsk" eventType="touchUpInside" id="n4T-3o-DdU"/>
                                                                 </connections>
                                                             </button>
@@ -1448,7 +1447,6 @@ Detection</string>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbp-aI-C94">
                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="140"/>
                                                                 <connections>
-                                                                    <action selector="btnImageDetection:" destination="vfx-xJ-K1L" eventType="touchUpInside" id="LcQ-Cq-n4L"/>
                                                                     <action selector="btnSurfaceDetectionClicked:" destination="M8d-dN-Tsk" eventType="touchUpInside" id="bC5-UQ-Cgl"/>
                                                                 </connections>
                                                             </button>
@@ -1501,7 +1499,6 @@ Detection</string>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMb-Q7-Afq">
                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="140"/>
                                                                 <connections>
-                                                                    <action selector="btnActionScanAndDetectObjects:" destination="vfx-xJ-K1L" eventType="touchUpInside" id="B8g-Dw-bUu"/>
                                                                     <action selector="btnSittingPostureClicked:" destination="M8d-dN-Tsk" eventType="touchUpInside" id="6Be-qu-Php"/>
                                                                 </connections>
                                                             </button>
@@ -1547,8 +1544,7 @@ Detection</string>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiL-yx-Sb4">
                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="140"/>
                                                                 <connections>
-                                                                    <action selector="btnBodyPostureClicked:" destination="M8d-dN-Tsk" eventType="touchUpInside" id="9CJ-92-10X"/>
-                                                                    <action selector="btnEnvironmentTexturing:" destination="vfx-xJ-K1L" eventType="touchUpInside" id="toB-3h-Lkj"/>
+                                                                    <action selector="btnStandingPostureClicked:" destination="M8d-dN-Tsk" eventType="touchUpInside" id="t2A-aO-1Hc"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -1623,7 +1619,25 @@ Detection</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMZ-Hy-FDv" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1399" y="833"/>
+            <point key="canvasLocation" x="284" y="90"/>
+        </scene>
+        <!--Standing PostureVC-->
+        <scene sceneID="7zY-aN-XBQ">
+            <objects>
+                <viewController storyboardIdentifier="StandingPostureVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ebR-N8-Mxe" customClass="StandingPostureVC" customModule="ios12_Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B15-wi-sx0" customClass="ARView" customModule="RealityKit">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <viewLayoutGuide key="safeArea" id="52r-68-AUU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="arView" destination="B15-wi-sx0" id="ph5-jl-UPN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hwR-XL-DAu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1458" y="833"/>
         </scene>
     </scenes>
     <designables>
@@ -1661,7 +1675,7 @@ Detection</string>
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemCyanColor">
-            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -40,4 +40,9 @@ class AVDetailsVC: BaseCameraVC {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ARPostureDetection") as? ARPostureDetection
         self.navigationController?.pushViewController(vc!, animated: true)
     }
+
+    @IBAction func btnStandingPostureClicked(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "StandingPostureVC") as? StandingPostureVC
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
 }

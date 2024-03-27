@@ -10,6 +10,16 @@
 		2E04C9092B503318000B4936 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04C9082B503318000B4936 /* StatusViewController.swift */; };
 		2E15A5982B32F720001EA792 /* RectangleDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E15A5972B32F720001EA792 /* RectangleDetector.swift */; };
 		2E15A59A2B32FE85001EA792 /* ARImageDetectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E15A5992B32FE85001EA792 /* ARImageDetectorVC.swift */; };
+		2E18E1462BB2A70900D4C1E3 /* ARPostureDetection+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18E1452BB2A70900D4C1E3 /* ARPostureDetection+ARSessionDelegate.swift */; };
+		2E18E14B2BB2A94F00D4C1E3 /* Bones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18E1492BB2A94F00D4C1E3 /* Bones.swift */; };
+		2E18E14C2BB2A94F00D4C1E3 /* JointAngles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18E14A2BB2A94F00D4C1E3 /* JointAngles.swift */; };
+		2E18E14F2BB2AAEE00D4C1E3 /* SkeletonJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18E14D2BB2AAEE00D4C1E3 /* SkeletonJoint.swift */; };
+		2E18E1502BB2AAEE00D4C1E3 /* SkeletonBone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18E14E2BB2AAEE00D4C1E3 /* SkeletonBone.swift */; };
+		2E18E1552BB2AC9300D4C1E3 /* BodySkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18E1522BB2AC9300D4C1E3 /* BodySkeleton.swift */; };
+		2E18E1562BB2AC9300D4C1E3 /* BodySkeleton+AngleDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18E1532BB2AC9300D4C1E3 /* BodySkeleton+AngleDetection.swift */; };
+		2E18E1572BB2AC9300D4C1E3 /* BodySkeleton+Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18E1542BB2AC9300D4C1E3 /* BodySkeleton+Entity.swift */; };
+		2E18E1592BB2AD2800D4C1E3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18E1582BB2AD2800D4C1E3 /* String+Extension.swift */; };
+		2E18E15B2BB2BB1500D4C1E3 /* StandingPostureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18E15A2BB2BB1500D4C1E3 /* StandingPostureVC.swift */; };
 		2E70214B2B8EFC4000089680 /* ARPostureDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70214A2B8EFC4000089680 /* ARPostureDetection.swift */; };
 		2E70214F2B90A0D900089680 /* BaseCameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70214E2B90A0D900089680 /* BaseCameraVC.swift */; };
 		2E7021512B90A42700089680 /* AVDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7021502B90A42700089680 /* AVDetailsVC.swift */; };
@@ -97,6 +107,16 @@
 		2E04C9082B503318000B4936 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		2E15A5972B32F720001EA792 /* RectangleDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleDetector.swift; sourceTree = "<group>"; };
 		2E15A5992B32FE85001EA792 /* ARImageDetectorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARImageDetectorVC.swift; sourceTree = "<group>"; };
+		2E18E1452BB2A70900D4C1E3 /* ARPostureDetection+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARPostureDetection+ARSessionDelegate.swift"; sourceTree = "<group>"; };
+		2E18E1492BB2A94F00D4C1E3 /* Bones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bones.swift; sourceTree = "<group>"; };
+		2E18E14A2BB2A94F00D4C1E3 /* JointAngles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JointAngles.swift; sourceTree = "<group>"; };
+		2E18E14D2BB2AAEE00D4C1E3 /* SkeletonJoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonJoint.swift; sourceTree = "<group>"; };
+		2E18E14E2BB2AAEE00D4C1E3 /* SkeletonBone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonBone.swift; sourceTree = "<group>"; };
+		2E18E1522BB2AC9300D4C1E3 /* BodySkeleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BodySkeleton.swift; path = "ios12 Sampler/Body Detection with AR/Standing Posture/SkeletonHelper/BodySkeleton.swift"; sourceTree = SOURCE_ROOT; };
+		2E18E1532BB2AC9300D4C1E3 /* BodySkeleton+AngleDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BodySkeleton+AngleDetection.swift"; path = "ios12 Sampler/Body Detection with AR/Standing Posture/SkeletonHelper/BodySkeleton+AngleDetection.swift"; sourceTree = SOURCE_ROOT; };
+		2E18E1542BB2AC9300D4C1E3 /* BodySkeleton+Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BodySkeleton+Entity.swift"; path = "ios12 Sampler/Body Detection with AR/Standing Posture/SkeletonHelper/BodySkeleton+Entity.swift"; sourceTree = SOURCE_ROOT; };
+		2E18E1582BB2AD2800D4C1E3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		2E18E15A2BB2BB1500D4C1E3 /* StandingPostureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandingPostureVC.swift; sourceTree = "<group>"; };
 		2E70214A2B8EFC4000089680 /* ARPostureDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPostureDetection.swift; sourceTree = "<group>"; };
 		2E70214E2B90A0D900089680 /* BaseCameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCameraVC.swift; sourceTree = "<group>"; };
 		2E7021502B90A42700089680 /* AVDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVDetailsVC.swift; sourceTree = "<group>"; };
@@ -213,10 +233,59 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		2E7021492B8EFBD500089680 /* Body Detection with AR */ = {
+		2E18E1442BB2A68400D4C1E3 /* Sitting Posture */ = {
 			isa = PBXGroup;
 			children = (
 				2E70214A2B8EFC4000089680 /* ARPostureDetection.swift */,
+				2E18E1452BB2A70900D4C1E3 /* ARPostureDetection+ARSessionDelegate.swift */,
+			);
+			path = "Sitting Posture";
+			sourceTree = "<group>";
+		};
+		2E18E1472BB2A7AB00D4C1E3 /* Standing Posture */ = {
+			isa = PBXGroup;
+			children = (
+				2E18E15A2BB2BB1500D4C1E3 /* StandingPostureVC.swift */,
+				2E18E15C2BB2BB3500D4C1E3 /* SkeletonHelper */,
+				2E18E1512BB2ABE300D4C1E3 /* Skeleton */,
+			);
+			path = "Standing Posture";
+			sourceTree = "<group>";
+		};
+		2E18E1482BB2A93B00D4C1E3 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2E18E1492BB2A94F00D4C1E3 /* Bones.swift */,
+				2E18E14A2BB2A94F00D4C1E3 /* JointAngles.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		2E18E1512BB2ABE300D4C1E3 /* Skeleton */ = {
+			isa = PBXGroup;
+			children = (
+				2E18E14E2BB2AAEE00D4C1E3 /* SkeletonBone.swift */,
+				2E18E14D2BB2AAEE00D4C1E3 /* SkeletonJoint.swift */,
+				2E18E1482BB2A93B00D4C1E3 /* Enums */,
+			);
+			path = Skeleton;
+			sourceTree = "<group>";
+		};
+		2E18E15C2BB2BB3500D4C1E3 /* SkeletonHelper */ = {
+			isa = PBXGroup;
+			children = (
+				2E18E1522BB2AC9300D4C1E3 /* BodySkeleton.swift */,
+				2E18E1532BB2AC9300D4C1E3 /* BodySkeleton+AngleDetection.swift */,
+				2E18E1542BB2AC9300D4C1E3 /* BodySkeleton+Entity.swift */,
+			);
+			path = SkeletonHelper;
+			sourceTree = "<group>";
+		};
+		2E7021492B8EFBD500089680 /* Body Detection with AR */ = {
+			isa = PBXGroup;
+			children = (
+				2E18E1472BB2A7AB00D4C1E3 /* Standing Posture */,
+				2E18E1442BB2A68400D4C1E3 /* Sitting Posture */,
 			);
 			path = "Body Detection with AR";
 			sourceTree = "<group>";
@@ -229,6 +298,7 @@
 				2E7021572B95ACF900089680 /* Simd3+Extension.swift */,
 				2E7021592B95B4B600089680 /* MeshResource+Extension.swift */,
 				2E70215B2B95B65B00089680 /* Float+Extension.swift */,
+				2E18E1582BB2AD2800D4C1E3 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -586,6 +656,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E18E1562BB2AC9300D4C1E3 /* BodySkeleton+AngleDetection.swift in Sources */,
 				2E70215A2B95B4B600089680 /* MeshResource+Extension.swift in Sources */,
 				4931C78D20D3988F002F907B /* AVTextureEnvironment.swift in Sources */,
 				2E89AB4F2B481EAA005EB695 /* FilterCell.swift in Sources */,
@@ -593,18 +664,21 @@
 				4968C0DA20D12AA700D384F0 /* ThresholdPinchGestureRecognizer.swift in Sources */,
 				4968C0DF20D12BF500D384F0 /* ViewController+ApplicationState.swift in Sources */,
 				2E7021582B95ACF900089680 /* Simd3+Extension.swift in Sources */,
+				2E18E14F2BB2AAEE00D4C1E3 /* SkeletonJoint.swift in Sources */,
 				2E7021542B95ACA100089680 /* Int+Extension.swift in Sources */,
 				49C5721020D269E300602C7B /* AVMainVC.swift in Sources */,
 				2E9300F62B4683DC002BF5D6 /* AlteredImage.swift in Sources */,
 				4904E81020D776B3002F5210 /* DetectedBoundingBox.swift in Sources */,
 				4904E80E20D776B3002F5210 /* ObjectOriginAxis.swift in Sources */,
 				2E70214B2B8EFC4000089680 /* ARPostureDetection.swift in Sources */,
+				2E18E1552BB2AC9300D4C1E3 /* BodySkeleton.swift in Sources */,
 				4904E7EB20D77386002F5210 /* ViewController+SessionInfo.swift in Sources */,
 				4968C0CB20D12AA700D384F0 /* FlashlightButton.swift in Sources */,
 				2E15A5982B32F720001EA792 /* RectangleDetector.swift in Sources */,
 				4968C0DE20D12BF100D384F0 /* ScanObjectsVC.swift in Sources */,
 				2E89AB4A2B46DBD8005EB695 /* ImageTrackingUtility.swift in Sources */,
 				4904E80B20D776B3002F5210 /* BoundingBoxSide.swift in Sources */,
+				2E18E14B2BB2A94F00D4C1E3 /* Bones.swift in Sources */,
 				2E89AB4C2B47E11C005EB695 /* VisuallizationNode.swift in Sources */,
 				4904E7F920D7767E002F5210 /* ARCameraTrackingState.swift in Sources */,
 				4969EABD20D10AAC00F8AE9E /* MultipeerSession.swift in Sources */,
@@ -616,12 +690,16 @@
 				2E75032D2B30913E00DF78E1 /* Utility.swift in Sources */,
 				4904E81220D776B3002F5210 /* ObjectOrigin.swift in Sources */,
 				4968C0A120D12A6500D384F0 /* ViewController+Gestures.swift in Sources */,
+				2E18E15B2BB2BB1500D4C1E3 /* StandingPostureVC.swift in Sources */,
+				2E18E1592BB2AD2800D4C1E3 /* String+Extension.swift in Sources */,
 				4904E81120D776B3002F5210 /* Tile.swift in Sources */,
 				4904E80720D776B3002F5210 /* ScannedPointCloud.swift in Sources */,
 				4904E7EC20D77386002F5210 /* TestRun.swift in Sources */,
 				2E75032B2B3079FB00DF78E1 /* Plane.swift in Sources */,
+				2E18E1462BB2A70900D4C1E3 /* ARPostureDetection+ARSessionDelegate.swift in Sources */,
 				4968C0D920D12AA700D384F0 /* ThresholdRotationGestureRecognizer.swift in Sources */,
 				4904E80D20D776B3002F5210 /* DetectedPointCloud.swift in Sources */,
+				2E18E14C2BB2A94F00D4C1E3 /* JointAngles.swift in Sources */,
 				8127E0E620D7E60100D8CD7F /* iOSDevCenters+GIF.swift in Sources */,
 				4904E7F820D7767E002F5210 /* Utilities.swift in Sources */,
 				2E7021512B90A42700089680 /* AVDetailsVC.swift in Sources */,
@@ -630,11 +708,13 @@
 				4904E80820D776B3002F5210 /* ScannedObject.swift in Sources */,
 				4968C0E320D14B1B00D384F0 /* AVScannedObjectListVC.swift in Sources */,
 				4904E7EE20D77386002F5210 /* Scan.swift in Sources */,
+				2E18E1502BB2AAEE00D4C1E3 /* SkeletonBone.swift in Sources */,
 				4904E7EF20D77386002F5210 /* ShareScanViewController.swift in Sources */,
 				4904E7ED20D77386002F5210 /* ViewController+NavigationBar.swift in Sources */,
 				4969EA8D20D109FC00F8AE9E /* AppDelegate.swift in Sources */,
 				4904E80A20D776B3002F5210 /* BoundingBox.swift in Sources */,
 				8127E0E320D7E5B500D8CD7F /* AVImageDetaction.swift in Sources */,
+				2E18E1572BB2AC9300D4C1E3 /* BodySkeleton+Entity.swift in Sources */,
 				4904E80920D776B3002F5210 /* Wireframe.swift in Sources */,
 				2E70215C2B95B65B00089680 /* Float+Extension.swift in Sources */,
 				4968C0CA20D12AA700D384F0 /* MessageLabel.swift in Sources */,
