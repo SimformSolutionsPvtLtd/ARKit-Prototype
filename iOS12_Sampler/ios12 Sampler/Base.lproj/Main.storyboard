@@ -1547,8 +1547,7 @@ Detection</string>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiL-yx-Sb4">
                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="140"/>
                                                                 <connections>
-                                                                    <action selector="btnBodyPostureClicked:" destination="M8d-dN-Tsk" eventType="touchUpInside" id="9CJ-92-10X"/>
-                                                                    <action selector="btnEnvironmentTexturing:" destination="vfx-xJ-K1L" eventType="touchUpInside" id="toB-3h-Lkj"/>
+                                                                    <action selector="btnStandingPostureClicked:" destination="M8d-dN-Tsk" eventType="touchUpInside" id="t2A-aO-1Hc"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -1623,7 +1622,25 @@ Detection</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMZ-Hy-FDv" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1399" y="833"/>
+            <point key="canvasLocation" x="284" y="90"/>
+        </scene>
+        <!--Standing PostureVC-->
+        <scene sceneID="7zY-aN-XBQ">
+            <objects>
+                <viewController storyboardIdentifier="StandingPostureVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ebR-N8-Mxe" customClass="StandingPostureVC" customModule="ios12_Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B15-wi-sx0" customClass="ARView" customModule="RealityKit">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <viewLayoutGuide key="safeArea" id="52r-68-AUU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="arView" destination="B15-wi-sx0" id="ph5-jl-UPN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hwR-XL-DAu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1458" y="833"/>
         </scene>
     </scenes>
     <designables>
