@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k7f-92-VpS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k7f-92-VpS">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -1401,7 +1401,6 @@ Image Filter</string>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WI-Yy-R8a">
                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="140"/>
                                                                 <connections>
-                                                                    <action selector="btnActionWorldSharing:" destination="vfx-xJ-K1L" eventType="touchUpInside" id="MuM-8A-PFl"/>
                                                                     <action selector="btnLiveImageFilterClicked:" destination="M8d-dN-Tsk" eventType="touchUpInside" id="n4T-3o-DdU"/>
                                                                 </connections>
                                                             </button>
@@ -1439,7 +1438,7 @@ Image Filter</string>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9n-9R-36g">
                                                                 <rect key="frame" x="20" y="75" width="122.5" height="45"/>
-                                                                <string key="text">Surface
+                                                                <string key="text">Face
 Detection</string>
                                                                 <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="16"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1448,7 +1447,6 @@ Detection</string>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbp-aI-C94">
                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="140"/>
                                                                 <connections>
-                                                                    <action selector="btnImageDetection:" destination="vfx-xJ-K1L" eventType="touchUpInside" id="LcQ-Cq-n4L"/>
                                                                     <action selector="btnSurfaceDetectionClicked:" destination="M8d-dN-Tsk" eventType="touchUpInside" id="bC5-UQ-Cgl"/>
                                                                 </connections>
                                                             </button>
@@ -1501,7 +1499,6 @@ Detection</string>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMb-Q7-Afq">
                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="140"/>
                                                                 <connections>
-                                                                    <action selector="btnActionScanAndDetectObjects:" destination="vfx-xJ-K1L" eventType="touchUpInside" id="B8g-Dw-bUu"/>
                                                                     <action selector="btnSittingPostureClicked:" destination="M8d-dN-Tsk" eventType="touchUpInside" id="6Be-qu-Php"/>
                                                                 </connections>
                                                             </button>
@@ -1642,6 +1639,96 @@ Detection</string>
             </objects>
             <point key="canvasLocation" x="-1458" y="833"/>
         </scene>
+        <!--Face Detection-->
+        <scene sceneID="DJy-GH-gK6">
+            <objects>
+                <viewController storyboardIdentifier="ARFaceDetection" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h06-IJ-xf4" customClass="ARFaceDetection" customModule="ios12_Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wgx-Z0-3FG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fvc-OS-ghP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cv1-1u-cTN">
+                                <rect key="frame" x="0.0" y="557" width="375" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="NAd-LK-K0b"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yld-7u-DFs">
+                                    <size key="itemSize" width="140" height="132"/>
+                                    <size key="estimatedItemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="145" minY="0.0" maxX="145" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ModelCollectionCell" id="FSW-fP-3Tb" customClass="ModelCollectionCell" customModule="ios12_Sampler" customModuleProvider="target">
+                                        <rect key="frame" x="145" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0ga-ks-tpJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Neon" translatesAutoresizingMaskIntoConstraints="NO" id="0lM-78-6gf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="3WB-OK-LMC"/>
+                                                        <constraint firstAttribute="height" constant="100" id="NYA-7C-bDH"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="0lM-78-6gf" firstAttribute="top" secondItem="0ga-ks-tpJ" secondAttribute="top" id="YeO-x8-lyL"/>
+                                                <constraint firstAttribute="trailing" secondItem="0lM-78-6gf" secondAttribute="trailing" id="dQt-DG-nIc"/>
+                                                <constraint firstItem="0lM-78-6gf" firstAttribute="leading" secondItem="0ga-ks-tpJ" secondAttribute="leading" id="fI6-87-xYj"/>
+                                                <constraint firstAttribute="bottom" secondItem="0lM-78-6gf" secondAttribute="bottom" id="gHy-JH-r9I"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="100" height="100"/>
+                                        <connections>
+                                            <outlet property="modelImgVw" destination="0lM-78-6gf" id="Uyz-et-umq"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bb9-UK-nlz">
+                                <rect key="frame" x="127.5" y="547" width="120" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Qhj-BM-Npy"/>
+                                    <constraint firstAttribute="height" constant="120" id="v2A-Sm-KeE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NPE-IW-ajN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fvc-OS-ghP" firstAttribute="leading" secondItem="wgx-Z0-3FG" secondAttribute="leading" id="0PN-Ua-ntK"/>
+                            <constraint firstItem="NPE-IW-ajN" firstAttribute="trailing" secondItem="cv1-1u-cTN" secondAttribute="trailing" id="7E9-wV-Q9n"/>
+                            <constraint firstItem="cv1-1u-cTN" firstAttribute="leading" secondItem="NPE-IW-ajN" secondAttribute="leading" id="Qn9-HK-kPQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Fvc-OS-ghP" secondAttribute="trailing" id="Rgb-4a-Sk1"/>
+                            <constraint firstItem="bb9-UK-nlz" firstAttribute="centerY" secondItem="cv1-1u-cTN" secondAttribute="centerY" id="Ufu-XT-vYb"/>
+                            <constraint firstItem="NPE-IW-ajN" firstAttribute="bottom" secondItem="cv1-1u-cTN" secondAttribute="bottom" constant="10" id="Y9d-oV-KLb"/>
+                            <constraint firstAttribute="bottom" secondItem="Fvc-OS-ghP" secondAttribute="bottom" id="lyy-cs-j8c"/>
+                            <constraint firstItem="Fvc-OS-ghP" firstAttribute="top" secondItem="wgx-Z0-3FG" secondAttribute="top" id="mgV-wk-U0Y"/>
+                            <constraint firstItem="bb9-UK-nlz" firstAttribute="centerX" secondItem="cv1-1u-cTN" secondAttribute="centerX" id="pQE-ZJ-u2p"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="arview" destination="Fvc-OS-ghP" id="7IH-xF-AtH"/>
+                        <outlet property="circleVw" destination="bb9-UK-nlz" id="5Wz-IR-b3q"/>
+                        <outlet property="modelCollectionView" destination="cv1-1u-cTN" id="NR7-0M-r53"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w3K-ih-WUD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-564" y="833"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="Cib-U8-Rbo">
@@ -1662,6 +1749,7 @@ Detection</string>
         <image name="DNO" width="35" height="41"/>
         <image name="ET" width="42" height="41"/>
         <image name="ID" width="38" height="38"/>
+        <image name="Neon" width="175" height="175"/>
         <image name="S&amp;D" width="46" height="31"/>
         <image name="SCN" width="40" height="45"/>
         <image name="Send" width="21" height="18"/>
@@ -1678,7 +1766,7 @@ Detection</string>
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemCyanColor">
-            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -1,15 +1,20 @@
-# Bluetoothed ARKit 2.0 with ARWorldMap!
+# ARKit 6.0
 
-After Apple’s introduction of ARKit 2, we have been consistently working behind to create shared-AR experiences. Our goal is to improve the utility of mobile using AR experiences. 
+After Apple’s introduction of ARKit, we have been consistently working behind to create various AR experiences levraging the power of ARKit, RealityKit & SceneKit. Our goal is to improve the utility of mobile using AR experiences. 
 
-This demo created using ARKit 2:
+This demo created using ARKit:
 * Creates Geo-localized AR experiences on ARWorldMap
 * Detects objects and images
 * Mark specific objects and create 3D renders in point cloud
-* Share information locally over BLE (Bluetooth low energy)
+* Share information locally over maintaining the ARWorld Session
+* Detecting user's sitting posture and providng info on it
+* Detecting user's standing posture along with angles
 
 ## Features in this demo:
 * Image tracking 
+* Face tracking 
+* Sitting posture tracking 
+* Standing posture tracking
 * Save and load maps 
 * Detect objects
 * Environmental texturing
@@ -17,9 +22,24 @@ This demo created using ARKit 2:
 ### Prerequisites
 Before we dive into the implementation details let’s take a look at the prerequisites of the course.
  
-* Xcode 10 (beta or above)
-* iOS 12 (beta or above)
-* Physical iPhone 6S or above
+* Latest Xcode
+* Latest iOS version
+* Physical iPhone device (Devices above X series is recommended for performance)
+
+### Face Traking and loading live 3d content
+Tracking and visualizing faces is a key feature to track user's face along with their expressions and simultaneuosly mimic the same user's expression using a 3D model, also there are many possible use cases of tracking face by honing the capability of ARKit
+
+Here, in this tutiorial we have added some of the basic functionality of tracking face along with mimicking user's facial expression 
+
+### Body Tracking with angles detection
+Body tracking is an essential feature of ARKit enabling to track a person in the physical environment and visualize their motion by applying the same body movements to a virtual character.
+Alongside this we can also create our own model to mimic user's movemnets or also can use the "biped_robot" provided by Apple itself
+
+In this demo we will detect 2 types of posture
+1. Sitting posture
+In this demo we detects the angle between the knee and spine joints as this demo is of sitting posture it mainly focus on user's sitting posture, According to certain reports when user sit's, there is certain pressure applied to spine joints so according to detected posture when user's sit with a reliable support with almost more than 90 degree angles and above which scientifically applies less pressure on spine joints the demo updates itself with the green shape and turns red if vice-versa
+2. Standing posture 
+This demo is all about standing and detecting user's movement along with angles, In this demo i have created a skeleton using cylinder(Bones) and sphere(joints) which will mimic users movement also i have placed angle calculations at the joints based on calculation of 2 nearby joints. This usecase serves various purpose of body tracking and can be useful for exercise related applicaitons.
  
 ### Image recognition and tracking
 “A photo is like a thousands words” - words are fine, but, ARKit-2 turns a photo into thousands of stories. 
