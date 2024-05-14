@@ -13,4 +13,10 @@ extension Float {
     var isNegative: Bool {
         return self < 0
     }
+
+    var toDegree : Float {
+        get {
+            self * 180 / .pi
+        }
+    }
 }
