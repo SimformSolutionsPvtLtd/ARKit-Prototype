@@ -91,7 +91,7 @@ func createPlaneNode(size: CGSize, rotation: Float, content: Any?) -> SCNNode {
 }
 
 func getFilterData() -> [FilterModel] {
-    return [FilterModel(filterDummyImage: UIImage(named: "random")!, filterName: "Random", isSelected: true, selectedFilterStyle: .randomStyle),
+    return [FilterModel(filterDummyImage: UIImage(named: "Random")!, filterName: "Random", isSelected: true, selectedFilterStyle: .randomStyle),
             FilterModel(filterDummyImage: UIImage(named: "style1")!, filterName: "Style1", isSelected: false),
             FilterModel(filterDummyImage: UIImage(named: "style2")!, filterName: "Style2", isSelected: false),
             FilterModel(filterDummyImage: UIImage(named: "style3")!, filterName: "Style3", isSelected: false),

@@ -20,6 +20,15 @@
 		2E18E1572BB2AC9300D4C1E3 /* BodySkeleton+Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18E1542BB2AC9300D4C1E3 /* BodySkeleton+Entity.swift */; };
 		2E18E1592BB2AD2800D4C1E3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18E1582BB2AD2800D4C1E3 /* String+Extension.swift */; };
 		2E18E15B2BB2BB1500D4C1E3 /* StandingPostureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18E15A2BB2BB1500D4C1E3 /* StandingPostureVC.swift */; };
+		2E2C35C42BE215F100200E7E /* ARFaceDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2C35C32BE215F100200E7E /* ARFaceDetection.swift */; };
+		2E2C35C62BE216FC00200E7E /* ModelCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2C35C52BE216FC00200E7E /* ModelCollectionCell.swift */; };
+		2E41DFD12BE2206F0012F773 /* Heart.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2E41DFCA2BE2206F0012F773 /* Heart.usdz */; };
+		2E41DFD22BE2206F0012F773 /* Glasses.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2E41DFCB2BE2206F0012F773 /* Glasses.usdz */; };
+		2E41DFD32BE2206F0012F773 /* Cyclops.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2E41DFCC2BE2206F0012F773 /* Cyclops.usdz */; };
+		2E41DFD42BE2206F0012F773 /* Neon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2E41DFCD2BE2206F0012F773 /* Neon.usdz */; };
+		2E41DFD52BE2206F0012F773 /* Star.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2E41DFCE2BE2206F0012F773 /* Star.usdz */; };
+		2E41DFD62BE2206F0012F773 /* Swag.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2E41DFCF2BE2206F0012F773 /* Swag.usdz */; };
+		2E41DFD72BE2206F0012F773 /* Animoji.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2E41DFD02BE2206F0012F773 /* Animoji.usdz */; };
 		2E70214B2B8EFC4000089680 /* ARPostureDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70214A2B8EFC4000089680 /* ARPostureDetection.swift */; };
 		2E70214F2B90A0D900089680 /* BaseCameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70214E2B90A0D900089680 /* BaseCameraVC.swift */; };
 		2E7021512B90A42700089680 /* AVDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7021502B90A42700089680 /* AVDetailsVC.swift */; };
@@ -31,6 +40,7 @@
 		2E7503282B30640100DF78E1 /* ARSurfaceDetectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7503272B30640100DF78E1 /* ARSurfaceDetectionVC.swift */; };
 		2E75032B2B3079FB00DF78E1 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E75032A2B3079FB00DF78E1 /* Plane.swift */; };
 		2E75032D2B30913E00DF78E1 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E75032C2B30913E00DF78E1 /* Utility.swift */; };
+		2E7D4AFC2BBADA0600DE0004 /* Metal_Round_Glasses.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2E7D4AF12BBADA0600DE0004 /* Metal_Round_Glasses.usdz */; };
 		2E89AB4A2B46DBD8005EB695 /* ImageTrackingUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E89AB492B46DBD8005EB695 /* ImageTrackingUtility.swift */; };
 		2E89AB4C2B47E11C005EB695 /* VisuallizationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E89AB4B2B47E11C005EB695 /* VisuallizationNode.swift */; };
 		2E89AB4F2B481EAA005EB695 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E89AB4E2B481EAA005EB695 /* FilterCell.swift */; };
@@ -117,6 +127,15 @@
 		2E18E1542BB2AC9300D4C1E3 /* BodySkeleton+Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BodySkeleton+Entity.swift"; path = "ios12 Sampler/Body Detection with AR/Standing Posture/SkeletonHelper/BodySkeleton+Entity.swift"; sourceTree = SOURCE_ROOT; };
 		2E18E1582BB2AD2800D4C1E3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		2E18E15A2BB2BB1500D4C1E3 /* StandingPostureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandingPostureVC.swift; sourceTree = "<group>"; };
+		2E2C35C32BE215F100200E7E /* ARFaceDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFaceDetection.swift; sourceTree = "<group>"; };
+		2E2C35C52BE216FC00200E7E /* ModelCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCollectionCell.swift; sourceTree = "<group>"; };
+		2E41DFCA2BE2206F0012F773 /* Heart.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Heart.usdz; sourceTree = "<group>"; };
+		2E41DFCB2BE2206F0012F773 /* Glasses.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Glasses.usdz; sourceTree = "<group>"; };
+		2E41DFCC2BE2206F0012F773 /* Cyclops.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Cyclops.usdz; sourceTree = "<group>"; };
+		2E41DFCD2BE2206F0012F773 /* Neon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Neon.usdz; sourceTree = "<group>"; };
+		2E41DFCE2BE2206F0012F773 /* Star.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Star.usdz; sourceTree = "<group>"; };
+		2E41DFCF2BE2206F0012F773 /* Swag.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Swag.usdz; sourceTree = "<group>"; };
+		2E41DFD02BE2206F0012F773 /* Animoji.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Animoji.usdz; sourceTree = "<group>"; };
 		2E70214A2B8EFC4000089680 /* ARPostureDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPostureDetection.swift; sourceTree = "<group>"; };
 		2E70214E2B90A0D900089680 /* BaseCameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCameraVC.swift; sourceTree = "<group>"; };
 		2E7021502B90A42700089680 /* AVDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVDetailsVC.swift; sourceTree = "<group>"; };
@@ -128,6 +147,7 @@
 		2E7503272B30640100DF78E1 /* ARSurfaceDetectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSurfaceDetectionVC.swift; sourceTree = "<group>"; };
 		2E75032A2B3079FB00DF78E1 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		2E75032C2B30913E00DF78E1 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		2E7D4AF12BBADA0600DE0004 /* Metal_Round_Glasses.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Metal_Round_Glasses.usdz; sourceTree = "<group>"; };
 		2E89AB492B46DBD8005EB695 /* ImageTrackingUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTrackingUtility.swift; sourceTree = "<group>"; };
 		2E89AB4B2B47E11C005EB695 /* VisuallizationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisuallizationNode.swift; sourceTree = "<group>"; };
 		2E89AB4E2B481EAA005EB695 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
@@ -281,6 +301,86 @@
 			path = SkeletonHelper;
 			sourceTree = "<group>";
 		};
+		2E2C35C22BE215CB00200E7E /* Face Detection with AR */ = {
+			isa = PBXGroup;
+			children = (
+				2E2C35C32BE215F100200E7E /* ARFaceDetection.swift */,
+				2E2C35C72BE2170100200E7E /* Cell */,
+			);
+			path = "Face Detection with AR";
+			sourceTree = "<group>";
+		};
+		2E2C35C72BE2170100200E7E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2E2C35C52BE216FC00200E7E /* ModelCollectionCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2E41DFC92BE220250012F773 /* Face Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E7D4AF12BBADA0600DE0004 /* Metal_Round_Glasses.usdz */,
+				2E41DFD02BE2206F0012F773 /* Animoji.usdz */,
+				2E41DFCC2BE2206F0012F773 /* Cyclops.usdz */,
+				2E41DFCB2BE2206F0012F773 /* Glasses.usdz */,
+				2E41DFCA2BE2206F0012F773 /* Heart.usdz */,
+				2E41DFCD2BE2206F0012F773 /* Neon.usdz */,
+				2E41DFCE2BE2206F0012F773 /* Star.usdz */,
+				2E41DFCF2BE2206F0012F773 /* Swag.usdz */,
+			);
+			path = "Face Models";
+			sourceTree = "<group>";
+		};
+		2E7021492B8EFBD500089680 /* Body Detection with AR */ = {
+			isa = PBXGroup;
+			children = (
+				2E70214A2B8EFC4000089680 /* ARPostureDetection.swift */,
+				2E18E1452BB2A70900D4C1E3 /* ARPostureDetection+ARSessionDelegate.swift */,
+			);
+			path = "Sitting Posture";
+			sourceTree = "<group>";
+		};
+		2E18E1472BB2A7AB00D4C1E3 /* Standing Posture */ = {
+			isa = PBXGroup;
+			children = (
+				2E18E15A2BB2BB1500D4C1E3 /* StandingPostureVC.swift */,
+				2E18E15C2BB2BB3500D4C1E3 /* SkeletonHelper */,
+				2E18E1512BB2ABE300D4C1E3 /* Skeleton */,
+			);
+			path = "Standing Posture";
+			sourceTree = "<group>";
+		};
+		2E18E1482BB2A93B00D4C1E3 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2E18E1492BB2A94F00D4C1E3 /* Bones.swift */,
+				2E18E14A2BB2A94F00D4C1E3 /* JointAngles.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		2E18E1512BB2ABE300D4C1E3 /* Skeleton */ = {
+			isa = PBXGroup;
+			children = (
+				2E18E14E2BB2AAEE00D4C1E3 /* SkeletonBone.swift */,
+				2E18E14D2BB2AAEE00D4C1E3 /* SkeletonJoint.swift */,
+				2E18E1482BB2A93B00D4C1E3 /* Enums */,
+			);
+			path = Skeleton;
+			sourceTree = "<group>";
+		};
+		2E18E15C2BB2BB3500D4C1E3 /* SkeletonHelper */ = {
+			isa = PBXGroup;
+			children = (
+				2E18E1522BB2AC9300D4C1E3 /* BodySkeleton.swift */,
+				2E18E1532BB2AC9300D4C1E3 /* BodySkeleton+AngleDetection.swift */,
+				2E18E1542BB2AC9300D4C1E3 /* BodySkeleton+Entity.swift */,
+			);
+			path = SkeletonHelper;
+			sourceTree = "<group>";
+		};
 		2E7021492B8EFBD500089680 /* Body Detection with AR */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +451,7 @@
 		2E962C6C2B67A10400D0903D /* USDZ */ = {
 			isa = PBXGroup;
 			children = (
+				2E41DFC92BE220250012F773 /* Face Models */,
 				2E962C8E2B69017200D0903D /* robot_walk_idle.usdz */,
 				2E90B3EC2B87636800D3DB90 /* biped_robot.usdz */,
 			);
@@ -457,6 +558,7 @@
 				4931C78C20D3988E002F907B /* AVTextureEnvironment.swift */,
 				8127E0E220D7E5B500D8CD7F /* AVImageDetaction.swift */,
 				2E7021492B8EFBD500089680 /* Body Detection with AR */,
+				2E2C35C22BE215CB00200E7E /* Face Detection with AR */,
 				2E04C9032B4EE267000B4936 /* Detecting Images in AR */,
 				2E75034B2B31E00400DF78E1 /* Tracking and altering images */,
 				2E7503222B30227F00DF78E1 /* Surface Detection */,
@@ -627,11 +729,19 @@
 				8127E0E820D7E6DC00D8CD7F /* giphy.gif in Resources */,
 				4969EA8F20D109FC00F8AE9E /* art.scnassets in Resources */,
 				4991D8F520D907B500BF6564 /* Loky.gif in Resources */,
+				2E41DFD12BE2206F0012F773 /* Heart.usdz in Resources */,
+				2E41DFD32BE2206F0012F773 /* Cyclops.usdz in Resources */,
+				2E7D4AFC2BBADA0600DE0004 /* Metal_Round_Glasses.usdz in Resources */,
+				2E41DFD62BE2206F0012F773 /* Swag.usdz in Resources */,
 				4969EA9920D109FD00F8AE9E /* LaunchScreen.storyboard in Resources */,
 				2E962C8F2B69017200D0903D /* robot_walk_idle.usdz in Resources */,
 				2E90B3ED2B87636800D3DB90 /* biped_robot.usdz in Resources */,
+				2E41DFD22BE2206F0012F773 /* Glasses.usdz in Resources */,
 				4969EA9620D109FD00F8AE9E /* Assets.xcassets in Resources */,
+				2E41DFD42BE2206F0012F773 /* Neon.usdz in Resources */,
 				4969EA9420D109FC00F8AE9E /* Main.storyboard in Resources */,
+				2E41DFD52BE2206F0012F773 /* Star.usdz in Resources */,
+				2E41DFD72BE2206F0012F773 /* Animoji.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,6 +795,7 @@
 				2E7503282B30640100DF78E1 /* ARSurfaceDetectionVC.swift in Sources */,
 				2E7021562B95ACD600089680 /* SCNVector3+Extension.swift in Sources */,
 				4968C0E520D14B3200D384F0 /* AVChoiceVC.swift in Sources */,
+				2E2C35C42BE215F100200E7E /* ARFaceDetection.swift in Sources */,
 				4969EA9120D109FC00F8AE9E /* AVSharingWorldMapVC.swift in Sources */,
 				4904E80F20D776B3002F5210 /* PointCloud+CreateVisualization.swift in Sources */,
 				2E75032D2B30913E00DF78E1 /* Utility.swift in Sources */,
@@ -721,6 +832,7 @@
 				4968C0DB20D12AA700D384F0 /* ThresholdPanGestureRecognizer.swift in Sources */,
 				4904E80C20D776B3002F5210 /* DetectedObject.swift in Sources */,
 				2E15A59A2B32FE85001EA792 /* ARImageDetectorVC.swift in Sources */,
+				2E2C35C62BE216FC00200E7E /* ModelCollectionCell.swift in Sources */,
 				2E9300F92B469633002BF5D6 /* StyleTransferModel.mlpackage in Sources */,
 				4968C0CC20D12AA700D384F0 /* RoundedButton.swift in Sources */,
 			);
