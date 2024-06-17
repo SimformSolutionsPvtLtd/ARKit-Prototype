@@ -74,9 +74,9 @@ In this tutorial, we demonstrate some basic functionalities of face tracking, in
 https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/2207f3eb-2069-4567-8dce-8789bdba8b12
  
 ### Image recognition and tracking
-Among the new developer features introduced at WWDC 2018, image detection and tracking stands out as one of the most exciting. Imagine being able to replace and augment any static image you see with contextual information.
+Among the new developer features introduced at WWDC, image detection and tracking stands out as one of the most exciting. Imagine being able to replace and augment any static image you see with contextual information.
 
-While image detection was introduced in ARKit 1.5, its functionality and maturity were somewhat limited. With the latest release, however, you can create truly amazing AR experiences. Check out the demo below to see it in action:
+While image detection was introduced in previousw versions of ARKit, its functionality and maturity were somewhat limited. With the latest release, however, you can create truly amazing AR experiences. Check out the demo below to see it in action:
 
 In this demo, we replace a static image with a GIF in real-time using image recognition and tracking.
 
@@ -91,11 +91,9 @@ ARKit introduces the revolutionary ARWorldMap, enabling persistent and multiuser
 With these standardized features, you can place virtual content—like funny GIFs—within your application. In this tutorial, 
 we will demonstrate how to create such an experience.
 
-![alt text](https://thumbs.gfycat.com/UnluckyOpenBug-size_restricted.gif)
+Let’s dive into some technical steps about how this feature works
 
-Let’s dive into steps for saving and loading the maps.
-
-First we are going to get the current world map from a user’s iPhone by using .getCurrentWorldMap(). We will save this session to get spatial awareness and initial anchors that were are going to share with another iPhone user. 
+First we are going to get the current world map from a user’s iPhone. We will save this session to get spatial awareness and initial anchors that were are going to share with another iPhone user. 
 
 Once, you get the session and world map related anchors from the first iPhone user. The app will now use Multipeer connectivity framework to push information on a P2P network to the 2nd iPhone user. 
 
