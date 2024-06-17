@@ -1,18 +1,21 @@
 # ARKit
 
-After Apple’s introduction of ARKit, we have been consistently working behind to create various AR experiences levraging the power of ARKit, RealityKit & SceneKit. Our goal is to improve the utility of mobile using AR experiences. 
+Since the introduction of ARKit by Apple, we have been dedicated to creating various augmented reality (AR) experiences leveraging ARKit, RealityKit, and SceneKit. Our primary goal is to enhance the utility of mobile devices through innovative AR experiences.
 
-ARKit supports various features from which some of them are listed below :-
-* Tracking and Visualizing Planes
+## ARKit Features:
+ARKit supports a range of features, including:
+* Tracking and visualizing planes
 * Tracking and altering images
-* Detecting Images in an AR Experience
+* Detecting images in an AR experience
 * Scanning and detecting 3D objects
 * Capturing Body Motion in 3D
 * Tracking and Visualizing Faces
 * Tracking Geographic Locations in AR
-* Screen Annotations for Objects in an AR Experience and many others
+* Screen Annotations for Objects in an AR Experience
+* Many other advanced capabilities
 
-In which this demo includes most of the features using ARKit like:
+## Demonstration Features:
+This demo showcases most of these ARKit features, including:
 * Creating Geo-localized AR experiences on ARWorldMap
 * Detecting objects and images
 * Marking specific objects and create 3D renders in point cloud
@@ -21,7 +24,7 @@ In which this demo includes most of the features using ARKit like:
 * Detecting user's Standing posture along with angles
 * Detecting User's face and visualizing models on it
 
-## Features in this demo:
+## Specific Features in This Demo:
 * Image tracking 
 * Face tracking 
 * Sitting posture tracking 
@@ -32,208 +35,104 @@ In which this demo includes most of the features using ARKit like:
 * Environmental texturing
 
 ### Prerequisites
-Before we dive into the implementation details let’s take a look at the prerequisites of the course.
- 
-* Latest Xcode
+Before diving into the implementation details, ensure you have the following:
+* Latest version of Xcode
 * Latest iOS version
-* Physical iPhone device (Devices above X series is recommended for performance)
+* Physical iPhone device (recommended: iPhone X series or newer for optimal performance)
 
 ### Body Tracking with angles detection
 Body tracking is an essential feature of ARKit enabling to track a person in the physical environment and visualize their motion by applying the same body movements to a virtual character.
 Alongside this we can also create our own model to mimic user's movemnets or also can use the "biped_robot" provided by Apple itself
 
-In this demo we will detect 2 types of posture
+In this demo, we will detect and analyze two types of posture:
 1. Sitting posture
-In this demo we detects the angle between the knee and spine joints as this demo is of sitting posture it mainly focus on user's sitting posture, According to certain reports when user sit's, there is certain pressure applied to spine joints so according to detected posture when user's sit with a reliable support with almost more than 90 degree angles and above which scientifically applies less pressure on spine joints the demo updates itself with the green shape and turns red if vice-versa
+
+This demo detects the angle between the knee and spine joints, focusing on the user's sitting posture. Studies show that sitting with proper support, maintaining an angle of more than 90 degrees, reduces pressure on the spine. The demo visually updates the detected posture: a green shape indicates a healthy posture with minimal spine pressure, while a red shape indicates poor posture.
 
 https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/6aa6ee49-1b65-43cf-b5d8-9e97b234e894
 
 https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/522118dd-f1b0-40ab-83fb-60b31b9c15d9
 
 2. Standing posture
-This demo is all about standing and detecting user's movement along with angles, In this demo i have created a skeleton using cylinder(Bones) and sphere(joints) which will mimic users movement also i have placed angle calculations at the joints based on calculation of 2 nearby joints. This usecase serves various purpose of body tracking and can be useful for exercise related applicaitons.
+
+This demo focuses on standing and tracking the user's movements and joint angles. A virtual skeleton, composed of cylinders (bones) and spheres (joints), mimics the user's movements. Angle calculations are performed at the joints based on the positions of adjacent joints. This feature has various applications, including exercise-related tracking and analysis.
 
 https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/68503890-5923-4ec6-bc65-eb5ef0027a88
 
 ### Applying live filter on rectangluar surface
-Whenever we detect any surface let's say we detect any rectangle in the camera feed and what if we need to apply live filter on detected rectangular surface, this can be achieved using Vision and ARKit framework and for applying live filters on that detected surface we have used a StyleTransferModel which is a MLModel provided by the Apple itself. 
+To apply a live filter on a detected rectangular surface, we utilize the Vision and ARKit frameworks along with a StyleTransferModel, an MLModel provided by Apple.
 
-What we did here is using the Arkit's ARImageAnchor we have tracked an image which is of rectangular shape then we have extracted or identified the rectangular surface using the VNRectangleObservation finding it's 4 different corner and then converting the detected image's pixelbuffer into the dimension which is required by the MLModel and then passing it through the MlModel which will then provide us the altered images to display real time. You can see the video reference below
+Here's how it works: Using ARKit's ARImageAnchor, we track an image with a rectangular shape. We then identify the rectangular surface through VNRectangleObservation, pinpointing its four corners. The detected image's pixel buffer is converted to the dimensions required by the MLModel. This processed image is passed through the MLModel, which provides the altered images to be displayed in real-time. You can see a video demonstration below.
 
 https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/49dfeac2-188c-40b3-97a3-5dc1489591c6
 
 ### Face Traking and loading live 3d content
-Tracking and visualizing faces is a key feature to track user's face along with their expressions and simultaneuosly mimic the same user's expression using a 3D model, also there are many possible use cases of tracking face by honing the capability of ARKit
+Tracking and visualizing faces is a crucial feature of ARKit, enabling the detection of a user's face and expressions while simultaneously mimicking these expressions using a 3D model. ARKit's face tracking capabilities open up numerous possibilities for various applications.
 
-Here, in this tutiorial we have added some of the basic functionality of tracking face along with mimicking user's facial expression 
+In this tutorial, we demonstrate some basic functionalities of face tracking, including the ability to mimic the user's facial expressions with a 3D model. 
 
 https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/2207f3eb-2069-4567-8dce-8789bdba8b12
  
 ### Image recognition and tracking
-“A photo is like a thousands words” - words are fine, but, ARKit-2 turns a photo into thousands of stories. 
+Among the new developer features introduced at WWDC 2018, image detection and tracking stands out as one of the most exciting. Imagine being able to replace and augment any static image you see with contextual information.
 
-Among the new dev features introduced in WWDC 2018, Image detection and tracking is one of the coolest. Imagine having the capability to replace and deliver contextual information to any static image that you see.  
+While image detection was introduced in ARKit 1.5, its functionality and maturity were somewhat limited. With the latest release, however, you can create truly amazing AR experiences. Check out the demo below to see it in action:
 
-Image detection was introduced in ARKit 1.5, but the functionality and maturity of the framework was a bit low. But with this release, you can build amazing AR experiences. Take a look at the demo below: 
+In this demo, we replace a static image with a GIF in real-time using image recognition and tracking.
 
 ![alt text](https://thumbs.gfycat.com/ShamelessFlimsyArcherfish-size_restricted.gif)
  
-* Class : AVImageDetection.swift
-```sh
-let configuration = ARImageTrackingConfiguration()
-let warrior = ARReferenceImage(UIImage(named: "DD")!.cgImage!,orientation: CGImagePropertyOrientation.up,physicalWidth: 0.90)
-configuration.trackingImages = [warrior]
-configuration.maximumNumberOfTrackedImages = 1
-```
-you can do custom action after image detect. We have added one GIF in replace of detected image.
- 
-```sh
-func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-        if let imageAnchor = anchor as? ARImageAnchor {
-            let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-            plane.firstMaterial?.diffuse.contents = UIColor(white: 1, alpha: 0.8)
-            let material = SCNMaterial()
-            material.diffuse.contents = viewObj
-            plane.materials = [material]
-            let planeNode = SCNNode(geometry: plane)
-            planeNode.eulerAngles.x = -.pi / 2
-            node.addChildNode(planeNode)
-        } else {
-            if isFirstTime == true{
-                isFirstTime = false
-            } else {
-                return node
-            }
-            let plane = SCNPlane(width: 5, height: 5)
-            plane.firstMaterial?.diffuse.contents = UIColor(white: 1, alpha: 1)
-            let planeNode = SCNNode(geometry: plane)
-            planeNode.eulerAngles.x = .pi
-            let shipScene = SCNScene(named: "art.scnassets/Sphere.scn")!
-            let shipNode = shipScene.rootNode.childNodes.first!
-            shipNode.position = SCNVector3Zero
-            shipNode.position.z = 0.15
-            planeNode.addChildNode(shipNode)
-            node.addChildNode(planeNode)
-        }
-        return node
-    }
-```
 ![New Image Detecttion](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/91aae733-3ae3-4f4c-96c3-6f9f45aec3aa)
 
 
 ## Save and load maps
-ARKit 2 comes with revolutionary ARWorldMap that allows persistent and multiuser AR experiences. In simpler words, you can use ARWorldMap to not only render AR experiences and render objects, but it also builds awareness about your user’s physical space and helps your app. This means that you can detect and standardise real world features in your iOS app. 
+ARKit introduces the revolutionary ARWorldMap, enabling persistent and multiuser AR experiences. In simple terms, ARWorldMap allows you to not only render AR experiences and objects but also to build awareness of your user's physical space. This means your app can detect and standardize real-world features. 
 
-You can then use these standardised features to place virtual content (funny GIFs anyone?) on your application. 
-
-We are going to build something like this
+With these standardized features, you can place virtual content—like funny GIFs—within your application. In this tutorial, 
+we will demonstrate how to create such an experience.
 
 ![alt text](https://thumbs.gfycat.com/UnluckyOpenBug-size_restricted.gif)
-Let’s dive into tech implementation.
+
+Let’s dive into steps for saving and loading the maps.
 
 First we are going to get the current world map from a user’s iPhone by using .getCurrentWorldMap(). We will save this session to get spatial awareness and initial anchors that were are going to share with another iPhone user. 
 
-* Class : AVSharingWorldMapVC.swift 
-```sh
-sceneView.session.getCurrentWorldMap { worldMap, error in
-        guard let map = worldMap
-        else { print("Error: \(error!.localizedDescription)"); return }
-        guard let data = try? NSKeyedArchiver.archivedData(withRootObject: map, requiringSecureCoding: true)
-        else { fatalError("can't encode map") }
-        self.multipeerSession.sendToAllPeers(data)
-}
-```
 Once, you get the session and world map related anchors from the first iPhone user. The app will now use Multipeer connectivity framework to push information on a P2P network to the 2nd iPhone user. 
 
-The code below shows how the second iPhone user would receive session sent over Multipeer. The 2nd iPhone user in this case would receive a notification using a receiver handler. Once the receive a notification, we can then get session data and render it in ARWorld. 
-```sh
-func receivedData(_ data: Data, from peer: MCPeerID) {
-        if let unarchived = try? NSKeyedUnarchiver.unarchivedObject(of: ARWorldMap.classForKeyedArchiver()!, from: data), let worldMap = unarchived as? ARWorldMap {
-            // Run the session with the received world map.
-            let configuration = ARWorldTrackingConfiguration()
-            configuration.planeDetection = .horizontal
-            configuration.initialWorldMap = worldMap
-            sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
-            mapProvider = peer
-        }
-}
-```
-If you wish to get a more hands on experience with Multi user AR experiences, Apple has a demo project just for that. You can download the demo [here](https://developer.apple.com/documentation/arkit/creating_a_multiuser_ar_experience).
+The second iPhone user would receive session sent over Multipeer. The 2nd iPhone user in this case would receive a notification using a receiver handler. Once the receive a notification, we can then get session data and render it in ARWorld. 
+
+We are going to build something like this
 
 ![New AR world sharing 1 (1)](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/c5e46c3c-3888-4049-8e9d-26718c93c936)
 ![New AR world sharing 2 (1)](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/5f1c9404-16e1-488c-b39d-69a777ff50f4)
+
+If you wish to get a more hands on experience with Multi user AR experiences, Apple has a demo project just for that. You can download the demo [here](https://developer.apple.com/documentation/arkit/creating_a_multiuser_ar_experience).
 
 
 ### Object Scanning & Detection
 The new ARKit gives you the ability to scan 3D objects in the real world, creating a map of the scanned object that can be loaded when the object comes into view in the camera. 
 
-While scanning we can get current status of scanned object from the following delegate method
-* Class : ScanObjectsVC.swift
-```sh
- @objc func scanningStateChanged(_ notification: Notification)
- ```
-After a successful scan we can create and share a reference object which will be used to detect an object later on.
-* Class : Scan.swift
-```sh
- func createReferenceObject(completionHandler creationFinished: @escaping (ARReferenceObject?) -> Void) {
-        guard let boundingBox = scannedObject.boundingBox, let origin = scannedObject.origin else {
-            print("Error: No bounding box or object origin present.")
-            creationFinished(nil)
-            return
-        }
-        // Extract the reference object based on the position & orientation of the bounding box.
-        sceneView.session.createReferenceObject(
-            transform: boundingBox.simdWorldTransform,
-            center: float3(), extent: boundingBox.extent,
-            completionHandler: { object, error in
-                if let referenceObject = object {
-                    // Adjust the object's origin with the user-provided transform.
-                    self.scannedReferenceObject =
-                        referenceObject.applyingTransform(origin.simdTransform)
-                    self.scannedReferenceObject!.name = self.scannedObject.scanName
-                    creationFinished(self.scannedReferenceObject)
-                } else {
-                    print("Error: Failed to create reference object. \(error!.localizedDescription)")
-                    creationFinished(nil)
-                }
-        })
-    }
- ```
-https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/9c2bc288-183d-409c-b489-27c5576fcdea
+While scanning we can get current status of scanned object and after a successful scan we can create and share a reference object which will be used to detect an object later on.
+
+https://github.com/SimformSolutionsPvtLtd/ARKit-Prototype/assets/63225913/8cd83dd7-7a5f-4871-9870-7691f400d9b3
 
 Similar to the ARWorldMap object, ARKit creates a savable ARReferenceObject that can be saved and loaded during another session.
-* Class : AVReadARObjectVC.swift
-```sh
- let configuration = ARWorldTrackingConfiguration()
- 
- // ARReferenceObject(archiveURL :...   this method used when we have  ARReferenceObject Store in local Document Directory 
- configuration.detectionObjects = Set([try ARReferenceObject(archiveURL: objectURL!)])
- 
- // ARReferenceObject.referenceObjects(inGroupNamed...   this method used when we have  ARReferenceObject Store in Assest Folder
- configuration.detectionObjects = ARReferenceObject.referenceObjects(inGroupNamed: "", bundle: .main)!
- 
- sceneView.session.run(configuration)
- ```
- When Object is recognized, this delegate method will be called.
- ```sh
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? 
- ```
- You can do You custom action in this delegate method.
 
  ![New Object detection](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/3553ba08-e0a2-41b7-ab4e-a668a3b72f6d)
  
 ### Environment Texturing
-In previous versions of ARKit, 3D objects placed in the real world didn’t have the ability to gather much information about the world around them. This left objects looking unrealistic and out of place. Now, with environmental texturing, objects can reflect the world around them, giving them a greater sense of realism and place. When the user scans the scene, ARKit records and maps the environment onto a cube map. This cube map is then placed over the 3D object allowing it to reflect back the environment around it. What’s even cooler about this is that Apple is using machine learning to generate parts of the cube map that can’t be recorded by the camera, such as overhead lights or other aspects of the scene around it. This means that even if a user isn’t able to scan the entire scene, the object will still look as if it exists in that space because it can reflect objects that aren’t even directly in the scene.
+In previous versions of ARKit, 3D objects positioned in the real world lacked the ability to effectively integrate with their surroundings, often appearing artificial and disconnected. However, with the introduction of environmental texturing, these objects can now reflect their environment, enhancing their realism and sense of presence.
+
+Here’s how it works: When a user scans a scene using ARKit, the software captures and maps the environment onto a cube map. This cube map is then applied to the 3D object, allowing it to reflect back the surrounding environment.
+
+What makes this feature particularly advanced is Apple's use of machine learning to fill in parts of the cube map that the camera cannot capture, such as overhead lights or other scene details. This ensures that even if the entire scene isn't fully scanned, the object appears as if it naturally belongs in that space, reflecting elements that may not be directly visible.
+
+Overall, environmental texturing significantly improves the realism and integration of AR objects by seamlessly blending them with and reflecting their real-world surroundings.
  
-To enable environmental texturing, we simply set the configuration’s
-```sh
-environmentalTexturing property to .automatic.
-```
 ![New Env Texturing](https://github.com/SimformSolutionsPvtLtd/ARKit2.0-Prototype/assets/63225913/2e8bee92-267c-4a90-8608-76af83bcb886)
 
 Apple has created a project that can be used to scan 3D objects, and can be downloaded [here](https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects?changes=latest_minor)
  
 ### Inspired
- This demo is created from Apple's ARKit 2 sample [demo](https://developer.apple.com/documentation/arkit/swiftshot_creating_a_game_for_augmented_reality)
+ This demo is created from Apple's ARKit sample [demo](https://developer.apple.com/documentation/arkit)
  
