@@ -1,14 +1,25 @@
-# ARKit 6.0
+# ARKit
 
 After Apple’s introduction of ARKit, we have been consistently working behind to create various AR experiences levraging the power of ARKit, RealityKit & SceneKit. Our goal is to improve the utility of mobile using AR experiences. 
 
-This demo created using ARKit:
-* Creates Geo-localized AR experiences on ARWorldMap
-* Detects objects and images
-* Mark specific objects and create 3D renders in point cloud
+ARKit supports various features from which some of them are listed below :-
+* Tracking and Visualizing Planes
+* Tracking and altering images
+* Detecting Images in an AR Experience
+* Scanning and detecting 3D objects
+* Capturing Body Motion in 3D
+* Tracking and Visualizing Faces
+* Tracking Geographic Locations in AR
+* Screen Annotations for Objects in an AR Experience and many others
+
+In which this demo includes most of the features using ARKit like:
+* Creating Geo-localized AR experiences on ARWorldMap
+* Detecting objects and images
+* Marking specific objects and create 3D renders in point cloud
 * Share information locally over maintaining the ARWorld Session
-* Detecting user's sitting posture and providng info on it
-* Detecting user's standing posture along with angles
+* Detecting user's Sitting posture and providng info on it
+* Detecting user's Standing posture along with angles
+* Detecting User's face and visualizing models on it
 
 ## Features in this demo:
 * Image tracking 
