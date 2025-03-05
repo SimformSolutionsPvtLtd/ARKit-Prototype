@@ -19,4 +19,8 @@ extension Float {
             self * 180 / .pi
         }
     }
+
+    var toPoints: Self {
+        return (self * 2835)
+    }
 }

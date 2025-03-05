@@ -32,7 +32,7 @@ class AVDetailsVC: BaseCameraVC {
     }
 
     @IBAction func btnSurfaceDetectionClicked(_ sender: UIButton) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ARSurfaceDetectionVC") as? ARSurfaceDetectionVC
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ARFaceDetection") as? ARFaceDetection
         self.navigationController?.pushViewController(vc!, animated: true)
     }
 
