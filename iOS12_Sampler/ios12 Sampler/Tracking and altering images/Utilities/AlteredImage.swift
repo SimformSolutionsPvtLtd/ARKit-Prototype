@@ -139,7 +139,7 @@ class AlteredImage {
         /// Set the specific index to one (i.e set the index to one for the style we have to apply)
         print("self.styleIndexArray :-" ,self.styleIndexArray)
         self.styleIndexArray.setOnlyThisIndexToOne(index: styleIndex)
-        print("self.styleIndexArray New :-" ,self.styleIndexArray)
+        print("self.styleIndexArray New :-" ,self.styleIndexArray) 
 
         let options = MLPredictionOptions()
         options.usesCPUOnly = false
